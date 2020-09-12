@@ -29,16 +29,15 @@ p{
   font-size: 1.25rem;
 }
 
-hr {
-  border: dotted #f69e7b 6px;
-  border-bottom: none;
-  width: 4%;
-  margin: 150px auto;
-}
+
 
 
 
 /* Top Section */
+
+.text-color{
+  color: #F0F8FF;
+}
 
 #top-container{
   background-color: #383e56;
@@ -56,13 +55,13 @@ hr {
 .first-heading{
   font-weight: 900;
   font-size: 3.0rem;
-  color: #eedad1;
+  color: #F0F8FF;
 }
 
 .first-heading-h{
   font-weight: 900;
   font-size: 1.5rem;
-  color: #eedad1;
+  color: #F0F8FF;
 }
 
 .first-heading-container{
@@ -78,7 +77,7 @@ hr {
 }
 
 .first-description{
-  color: #eedad1;
+  color: #F0F8FF;
   padding:0.1rem 1rem;
   font-weight: 400;
 }
@@ -93,34 +92,43 @@ hr {
 
 .about-intro{
   margin: 20px auto 20px;
-  color: #f69e7b;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #2F4F4F;
+  text-decoration: underline;
 }
 
 
 /* Skills Section */
 
 #skills{
-  background-color: #eedad1;
+  background-color: #FAFAD2;
   padding: 100px 0 100px;
 
 }
 
 
 #about{
-  background-color: #eedad1;
+  background-color: #FFFAFA;
   padding: 100px 0 100px;
 
 }
 
 #projects{
-  background-color: #eedad1;
+  background-color: #E6E6FA;
+  padding: 100px 0 100px;
+
+}
+
+#resume{
+  background-color: #DCDCDC;
   padding: 100px 0 100px;
 
 }
 
 
 #publications{
-  background-color: #eedad1;
+  background-color: #E0FFFF;
   padding: 100px 0 100px;
 
 }
@@ -167,6 +175,7 @@ hr {
   margin-right: 20px;
   margin-top: auto;
   margin-bottom: auto;
+  border-radius: 100%;;
 }
 
 .ds-image{
@@ -175,10 +184,11 @@ hr {
   margin-left: 20px;
   margin-top: auto;
   margin-bottom: auto;
+  border-radius: 100%;;
 }
 
 .tt-image{
-  border-radius: 100%;;
+  border-radius: 100%;
   width: 100%;
 }
 
@@ -197,16 +207,24 @@ hr {
 .skill-name{
   font-size: 2rem;
   font-weight: 900;
-  color: #f69e7b;
+  color: #FF7F50;
+}
+
+.skill-name-name{
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FF7F50;
 }
 
 .skill-paragraph{
-
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FF7F50;
 }
 
 #contact-section{
   padding: 0 0 100px;
-  background-color:#EEDAD1;
+  background-color:#F5F5F5;
   color:#ff8000;
 }
 
