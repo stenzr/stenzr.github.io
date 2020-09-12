@@ -125,7 +125,15 @@ hr {
 
 }
 
-
+.row-skills-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.block-skills-flex {
+  width: 100px;
+}
 .a-ref{
   color: #5E5E5E;
   
@@ -184,6 +192,10 @@ hr {
   font-size: 2rem;
   font-weight: 900;
   color: #f69e7b;
+}
+
+.skill-paragraph{
+
 }
 
 #contact-section{
