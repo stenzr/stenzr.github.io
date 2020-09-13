@@ -2,15 +2,8 @@
 document.querySelector(".projects").addEventListener("click", function() {
   alert("Coming Soon");
 })
-*/
 
 document.querySelector(".blog").addEventListener("click", function() {
-  alert("Coming Soon");
-})
-
-
-/*
-document.querySelector(".resume").addEventListener("click", function() {
   alert("Coming Soon");
 })
 */

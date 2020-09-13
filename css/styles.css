@@ -148,7 +148,11 @@ p{
 
 }
 .second-heading{
-  color: #f69e7b;
+  margin: 20px auto 20px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #2F4F4F;
+  text-decoration: underline;
 }
 
 .skill-row{
@@ -175,7 +179,7 @@ p{
   margin-right: 20px;
   margin-top: auto;
   margin-bottom: auto;
-  border-radius: 100%;;
+  border-radius: 50%;;
 }
 
 .ds-image{
@@ -184,11 +188,11 @@ p{
   margin-left: 20px;
   margin-top: auto;
   margin-bottom: auto;
-  border-radius: 100%;;
+  border-radius: 50%;;
 }
 
 .tt-image{
-  border-radius: 100%;
+  border-radius: 50%;
   width: 100%;
 }
 
@@ -220,6 +224,37 @@ p{
   font-size: 2rem;
   font-weight: 900;
   color: #FF7F50;
+
+}
+
+.centre-div{
+  top: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: 30px;
+ 
+}
+
+.centre-div-p{
+  left: 400px;
+  margin-left: 200px;
+ 
+}
+
+.about-paragraph{
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2F4F4F;
+  text-align: center;
+
+}
+
+.about-paragraph-p{
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2F4F4F;
+  text-align: left;
+
 }
 
 #contact-section{
@@ -318,14 +353,51 @@ p{
 }
 
 
-@media (max-width:500px){
+@media (max-width:800px){
   .skill-row{
-    width: 85%;
+    max-width: 85%;
   }
 
   .first-image{
-    width: 100%;
+    max-width: 300px;
     margin-bottom: 10px;
   }
 
+  .about-intro{
+    margin: 20px auto 20px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #2F4F4F;
+    text-decoration: underline;
+    max-width: 100%;
+  }
+
+  .computer-image{
+    max-width: 100%;
+    margin-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+    height: auto;
+  }
+  
+  .ds-image{
+    max-width: 100%;
+    float: right;
+    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+    height: auto;
+  }
+  
+  .tt-image{
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  
 }
