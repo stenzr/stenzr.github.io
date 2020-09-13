@@ -152,7 +152,7 @@ p{
 }
 
 .skill-row{
-  width: 50%;
+  width: 100%;
   margin: 150px auto 0;
   text-align: left;
 }
@@ -171,7 +171,7 @@ p{
   /* Other styles here */
 }
 .computer-image{
-  width: 90%;
+  width: 100%;
   margin-right: 20px;
   margin-top: auto;
   margin-bottom: auto;
@@ -179,7 +179,7 @@ p{
 }
 
 .ds-image{
-  width: 90%;
+  width: 100%;
   float: right;
   margin-left: 20px;
   margin-top: auto;
@@ -314,9 +314,7 @@ p{
     width: 75%;
   }
 
-  .contact-me{
-    width: 70%;
-  }
+  
 }
 
 
@@ -324,4 +322,10 @@ p{
   .skill-row{
     width: 85%;
   }
+
+  .first-image{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
 }
