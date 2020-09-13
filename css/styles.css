@@ -175,7 +175,7 @@ p{
   /* Other styles here */
 }
 .computer-image{
-  width: 100%;
+  width: 90%;
   margin-right: 20px;
   margin-top: auto;
   margin-bottom: auto;
@@ -183,8 +183,8 @@ p{
 }
 
 .ds-image{
-  width: 100%;
-  float: right;
+  width: 90%;
+ 
   margin-left: 20px;
   margin-top: auto;
   margin-bottom: auto;
@@ -193,7 +193,7 @@ p{
 
 .tt-image{
   border-radius: 50%;
-  width: 100%;
+  
 }
 
 .image-container{
@@ -237,7 +237,7 @@ p{
 
 .centre-div-p{
   left: 400px;
-  margin-left: 200px;
+  margin-left: 450px;
  
 }
 
