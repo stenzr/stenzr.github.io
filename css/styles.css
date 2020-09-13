@@ -398,6 +398,22 @@ p{
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .centre-div-p{
+    left: 10px;
+    margin-left: 10px;
+   
+  }
+  
+  
+  
+  .about-paragraph-p{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2F4F4F;
+    text-align: left;
+  
+  }
   
   
 }
