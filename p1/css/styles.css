@@ -1,141 +1,160 @@
-*, html {
-    margin:0;
-    padding:0;  
+*,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
-#firstintro{
+#firstintro {
+  background-color: #383e56;
+  margin-top: 0;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 80%;
+}
+
+.profile-image {
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 3rem;
+  color: #f0f8ff;
+  padding-top: 2rem;
+}
+
+.profile-subtitle {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #f0f8ff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.typewrite {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #f0f8ff;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.navbar {
+  padding-top: 3rem;
+}
+
+.nav-item {
+  display: inline;
+  padding-right: 1rem;
+}
+
+.nav-link {
+  font-weight: 200;
+  font-size: 1.3rem;
+  color: #f0f8ff;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-link:hover {
+  color: darkorange;
+  text-shadow: rgb(214, 214, 14);
+}
+
+.social {
+  padding-top: 4rem;
+}
+.contact-icon-top {
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: beige;
+  padding-right: 0.5rem;
+}
+
+.contact-icon-top:hover {
+  color: #f69e7b;
+}
+
+.social-bottom {
+    padding-top: 4rem;
+  }
+  .contact-icon-bottom {
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    color:black;
+  }
+  
+  .contact-icon-bottom:hover {
+    color:royalblue;
+  }
+/*for mobiles*/
+
+@media (max-width: 900px) {
+  #firstintro {
     background-color: #383e56;
     margin-top: 0;
     text-align: center;
     padding-top: 100px;
-    padding-bottom: 100px;  
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    height: 80%;
-}
+    padding-bottom: 100px;
+  }
 
-.profile-image{
-    width: 400px;
+  .profile-image {
+    width: 250px;
     margin-bottom: 10px;
-}
+  }
 
-.profile-name{
+  .profile-name {
     font-weight: 600;
-    font-size: 3rem;
-    color: #F0F8FF;
-    padding-top: 2rem;
-
-}
-
-.profile-subtitle{
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: #F0F8FF;
+    font-size: 1.8rem;
+    color: #f0f8ff;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+  }
 
-    
-}
+  .profile-subtitle {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #f0f8ff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.2rem;
+  }
 
-.typewrite{
+  .typewrite {
     font-weight: 400;
-    font-size: 1.5rem;
-    color: #F0F8FF;
+    font-size: 1rem;
+    color: #f0f8ff;
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
+  }
 
-}
+  .navbar {
+    padding-top: 2.5rem;
+  }
 
-.navbar{
-    padding-top: 3rem;
+  .nav-item {
+    display: block;
+    padding-bottom: 0.7rem;
+  }
 
-}
-
-.nav-item{
-    display: inline;
-    padding-right: 1rem;
-}
-
-.nav-link{
+  .nav-link {
     font-weight: 200;
-    font-size: 1.3rem;
-    color: #F0F8FF;
+    font-size: 1rem;
+    color: #f0f8ff;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+  }
 
-.nav-link:hover{
-    color:darkorange;
-    text-shadow: rgb(214, 214, 14);
-
-}
-
-
-/*for mobiles*/
-
-@media (max-width: 900px){
-
-    #firstintro{
-        background-color: #383e56;
-        margin-top: 0;
-        text-align: center;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    .profile-image{
-        width: 250px;
-        margin-bottom: 10px;
-    }
-
-    .profile-name{
-        font-weight: 600;
-        font-size: 1.8rem;
-        color: #F0F8FF;
-        padding-top: 1rem;
-
-    
-    }
-    
-    .profile-subtitle{
-        font-weight: 500;
-        font-size: 1rem;
-        color: #F0F8FF;
-        padding-top: 0.5rem;
-        padding-bottom: 0.2rem;
-    }
-
-    .typewrite{
-        font-weight: 400;
-        font-size: 1rem;
-        color: #F0F8FF;
-        text-decoration: none;
-        font-family: 'Courier New', Courier, monospace;
-    
-    }
-
-    .navbar{
-        padding-top: 2.5rem;
-    
-    }
-    
-    .nav-item{
-        display: block;
-        padding-bottom: 1rem;
-    }
-    
-    .nav-link{
-        font-weight: 200;
-        font-size: 1rem;
-        color: #F0F8FF;
-        text-decoration: none;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-
-
-
+  .social {
+    padding-top: 1rem;
+  }
 }
