@@ -3,6 +3,10 @@
     padding:0;  
 }
 
+body {
+    height: 100vh;
+}
+
 #firstintro{
     background-color: #383e56;
     margin-top: 0;
@@ -10,19 +14,7 @@
     padding-top: 100px;
     padding-bottom: 100px;  
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
-}
-
-.profile-image-container{
-
-
-}
-
-.profile-name-container{
-
-}
-
-.profile-subtitle-container{
-
+    height: 80%;
 }
 
 .profile-image{
@@ -32,7 +24,7 @@
 
 .profile-name{
     font-weight: 600;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #F0F8FF;
     padding-top: 2rem;
 
@@ -40,19 +32,44 @@
 
 .profile-subtitle{
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #F0F8FF;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
     
 }
 
 .typewrite{
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #F0F8FF;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
+
+}
+
+.navbar{
+    padding-top: 3rem;
+
+}
+
+.nav-item{
+    display: inline;
+    padding-right: 1rem;
+}
+
+.nav-link{
+    font-weight: 200;
+    font-size: 1.3rem;
+    color: #F0F8FF;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-link:hover{
+    color:darkorange;
+    text-shadow: rgb(214, 214, 14);
 
 }
 
@@ -76,7 +93,7 @@
 
     .profile-name{
         font-weight: 600;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         color: #F0F8FF;
         padding-top: 1rem;
 
@@ -84,21 +101,38 @@
     }
     
     .profile-subtitle{
-        font-weight: 400;
-        font-size: 1.1rem;
+        font-weight: 500;
+        font-size: 1rem;
         color: #F0F8FF;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        
+        padding-top: 0.5rem;
+        padding-bottom: 0.2rem;
     }
 
     .typewrite{
         font-weight: 400;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #F0F8FF;
         text-decoration: none;
         font-family: 'Courier New', Courier, monospace;
     
+    }
+
+    .navbar{
+        padding-top: 1.5rem;
+    
+    }
+    
+    .nav-item{
+        display: block;
+        padding-bottom: 0.5rem;
+    }
+    
+    .nav-link{
+        font-weight: 200;
+        font-size: 1rem;
+        color: #F0F8FF;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
 
