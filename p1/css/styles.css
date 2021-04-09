@@ -1,0 +1,106 @@
+*, html {
+    margin:0;
+    padding:0;  
+}
+
+#firstintro{
+    background-color: #383e56;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+.profile-image-container{
+
+
+}
+
+.profile-name-container{
+
+}
+
+.profile-subtitle-container{
+
+}
+
+.profile-image{
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.profile-name{
+    font-weight: 600;
+    font-size: 3.5rem;
+    color: #F0F8FF;
+    padding-top: 2rem;
+
+}
+
+.profile-subtitle{
+    font-weight: 500;
+    font-size: 2rem;
+    color: #F0F8FF;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+
+.typewrite{
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #F0F8FF;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+/*for mobiles*/
+
+@media (max-width: 900px){
+
+    #firstintro{
+        background-color: #383e56;
+        margin-top: 0;
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .profile-image{
+        width: 250px;
+        margin-bottom: 10px;
+    }
+
+    .profile-name{
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: #F0F8FF;
+        padding-top: 1rem;
+
+    
+    }
+    
+    .profile-subtitle{
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: #F0F8FF;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
+    }
+
+    .typewrite{
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: #F0F8FF;
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+    
+    }
+
+
+
+}

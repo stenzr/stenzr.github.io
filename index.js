@@ -1,12 +1,3 @@
-/*
-document.querySelector(".projects").addEventListener("click", function() {
-  alert("Coming Soon");
-})
-
-document.querySelector(".blog").addEventListener("click", function() {
-  alert("Coming Soon");
-})
-*/
 
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
