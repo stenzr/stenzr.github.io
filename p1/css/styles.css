@@ -86,8 +86,8 @@ body {
 
 .social-bottom {
     padding-top: 4rem;
-  }
-  .contact-icon-bottom {
+}
+.contact-icon-bottom {
     margin-top: 10px;
     margin-bottom: 0;
     margin-left: 5px;
@@ -95,11 +95,11 @@ body {
     color: beige;
     padding-right: 0.1rem;
 
-  }
+}
   
-  .contact-icon-bottom:hover {
+.contact-icon-bottom:hover {
     color:royalblue;
-  }
+}
 
 #bottom-container{
     margin-bottom: 0;
@@ -135,9 +135,6 @@ body {
   font-size: 1rem;
 }
 
-.about-left{
-  
-}
 
 
 
