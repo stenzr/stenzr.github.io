@@ -92,12 +92,33 @@ body {
     margin-bottom: 0;
     margin-left: 5px;
     margin-right: 5px;
-    color:black;
+    color: beige;
+    padding-right: 0.1rem;
+
   }
   
   .contact-icon-bottom:hover {
     color:royalblue;
   }
+
+#bottom-container{
+    margin-bottom: 0;
+    padding: 50px 0 50px 0;
+    background-color: #383e56;
+    color: beige;
+    text-align: center;
+    
+}
+
+.copyright{
+  color:beige;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-decoration: None;
+}
+
+
+
 /*for mobiles*/
 
 @media (max-width: 900px) {
