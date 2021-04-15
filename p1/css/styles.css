@@ -114,7 +114,15 @@ body {
 }
   
 .contact-icon-bottom:hover {
-    color:royalblue;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #B0C4DE;
+    background-image: linear-gradient(to right,#B0C4DE,#7B68EE);
+    border-radius: .375rem;
+    color: darkblue;
+    font-weight: 900;
 }
 
 #bottom-container{
