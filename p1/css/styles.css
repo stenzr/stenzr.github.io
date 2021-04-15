@@ -127,12 +127,48 @@ body {
 }
 
 .section-content{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   color:#2F4F4F;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  text-align:justify;
+  font-size: 1.3rem;
+  padding-left: 30rem;
+  padding-right: 30rem;
+  line-height: 2rem;
+  
+}
+
+.area-expertise{
+  padding-left: 10rem;
+}
+
+.expertise-list{
+  padding-left: 3rem;
+}
+
+.resume-download{
+  text-align:center;
+  padding-bottom: 4rem;
+}
+
+.resume-download-a{
+  text-decoration: None;
+  border-style:solid;
+  border-color:#287EC7;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  text-align:center;
-  font-size: 1rem;
+  background: linear-gradient(to right, #1E90FF , skyblue);
+  border-radius: 2rem;
+  
+}
+
+.resume-download-a:hover{
+  background: linear-gradient(to right, #FFD700 , #FFDEAD);
+  box-shadow: 5px 10px #888888;
+  
 }
 
 
@@ -203,5 +239,31 @@ body {
     padding-bottom: 2rem;
     font-size: 1.5rem;
   }
+
+  .section-content{
+    padding-top: 1rem;
+    padding-bottom: 8rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    line-height: 1.8rem;
+    font-size: 1.1rem;   
+  }
+  
+  .area-expertise{
+    padding-left: 4rem;
+  }
+  
+  .expertise-list{
+    padding-left: 2rem;
+  }
+
+  .resume-download{
+    padding-bottom: 1rem;
+  }
+
+  .resume-embed{
+    display: none;
+  }
+  
   
 }
