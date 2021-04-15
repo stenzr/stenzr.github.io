@@ -64,8 +64,16 @@ body {
 }
 
 .nav-link:hover {
-  color: darkorange;
-  text-shadow: rgb(214, 214, 14);
+  text-decoration: None;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #f89420;
+  background-image: linear-gradient(to right,#f89420,#ed2330);
+  border-radius: .375rem;
+  color: #fff;
+  font-weight: 900;
 }
 
 .social {
@@ -81,7 +89,15 @@ body {
 }
 
 .contact-icon-top:hover {
-  color: #f69e7b;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #f89420;
+  background-image: linear-gradient(to left,#f89420,#ed2330);
+  border-radius: .375rem;
+  color: #fff;
+  font-weight: 900;
 }
 
 .social-bottom {
