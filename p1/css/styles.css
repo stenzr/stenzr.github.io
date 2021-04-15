@@ -150,24 +150,25 @@ body {
 .resume-download{
   text-align:center;
   padding-bottom: 4rem;
+
 }
 
 .resume-download-a{
   text-decoration: None;
-  border-style:solid;
-  border-color:#287EC7;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: linear-gradient(to right, #1E90FF , skyblue);
-  border-radius: 2rem;
-  
+  background-color: #f89420;
+  background-image: linear-gradient(to right,#f89420,#ed2330);
+  border-radius: .375rem;
+  color: #fff;
+  font-weight: 900;
 }
 
 .resume-download-a:hover{
-  background: linear-gradient(to right, #FFD700 , #FFDEAD);
-  box-shadow: 5px 10px #888888;
+  background-image: linear-gradient(to right,#ed2330, #f89420);
+  box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 50%);
   
 }
 
