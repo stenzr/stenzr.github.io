@@ -15,9 +15,15 @@ h2 {
 }
 
 #mytimeline p {
-  font-family: "lora-regular", serif;
+  font-family: "lora-regular", Verdana;
   font-style: normal;
   font-size: 1rem;
+  padding-bottom: 2rem;
+}
+
+#mytimeline a {
+  text-decoration: None;
+  font-family: "lora-regular", Verdana;
 }
 
 h3,
@@ -50,7 +56,7 @@ h5 {
 }
 
 #firstintro {
-  background-color: #383e56;
+  background-color:#070707;
   margin-top: 0;
   text-align: center;
   padding-top: 100px;
@@ -58,6 +64,20 @@ h5 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 80%;
 }
+
+#about {
+  background-color:#151515;
+  
+}
+
+#resume {
+  background-color:#151515;
+  
+}
+
+
+
+
 
 .profile-image {
   width: 400px;
@@ -168,7 +188,7 @@ h5 {
 #bottom-container {
   margin-bottom: 0;
   padding: 50px 0 50px 0;
-  background-color: #383e56;
+  background-color:#151515;
   color: beige;
   text-align: center;
 }
@@ -182,7 +202,7 @@ h5 {
 
 .section-heading {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #2f4f4f;
+  color:#10d1f3;
   padding-top: 5rem;
   padding-bottom: 2rem;
   text-align: center;
@@ -191,7 +211,7 @@ h5 {
 
 .section-content {
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: #2f4f4f;
+  color: #888888;
   padding-top: 2rem;
   padding-bottom: 5rem;
   text-align: justify;
@@ -645,7 +665,7 @@ h5 {
 
 @media (max-width: 900px) {
   #firstintro {
-    background-color: #383e56;
+    background-color: #151515;
     margin-top: 0;
     text-align: center;
     padding-top: 100px;
