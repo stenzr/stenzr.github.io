@@ -2,6 +2,7 @@
 html {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -146,7 +147,10 @@ h5 {
   margin-left: 5px;
   margin-right: 5px;
   color: beige;
+  padding-left: 0.5rem;
   padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .contact-icon-top:hover {
@@ -170,7 +174,10 @@ h5 {
   margin-left: 5px;
   margin-right: 5px;
   color: beige;
-  padding-right: 0.1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .contact-icon-bottom:hover {
@@ -616,20 +623,21 @@ h5 {
     text-align: left;
   }
   #mytimeline .timeline-header h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   #mytimeline .timeline-header p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
   #mytimeline .timeline-content {
     margin: 0;
   }
-  #mytimeline .timeline-content h4 {
+  #mytimeline .timeline-content h4 h5{
     padding-bottom: 0;
     padding-top: 2.1rem;
     margin-bottom: 0.6rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    
   }
   #mytimeline .timeline-content h4::after {
     bottom: auto;
@@ -665,7 +673,7 @@ h5 {
 
 @media (max-width: 900px) {
   #firstintro {
-    background-color: #151515;
+    background-color: #070707;
     margin-top: 0;
     text-align: center;
     padding-top: 100px;
