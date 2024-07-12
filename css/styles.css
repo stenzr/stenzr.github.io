@@ -37,7 +37,7 @@ h5 {
   text-rendering: optimizeLegibility;
   margin-bottom: 2.1rem;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   line-height: 1.25;
   display: block;
   margin-block-start: 0.83em;
@@ -45,6 +45,24 @@ h5 {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins-semibold", sans-serif;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    margin-bottom: 2.1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
 h3,
