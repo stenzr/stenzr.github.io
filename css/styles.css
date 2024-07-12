@@ -277,6 +277,16 @@ h5 {
   box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 50%);
 }
 
+a:-webkit-any-link {
+  color: #888888;
+}
+
+.medium-individual-post {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
 /** 
  * ===================================================================
  *  mytimeline - 
@@ -375,6 +385,36 @@ h5 {
 .col-full {
   width: 100%;
 }
+
+#medium-posts {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+/*
+.medium-post {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.medium-post h3 {
+  margin: 0 0 5px;
+}
+
+.medium-post p {
+  margin: 5px 0;
+}
+
+.medium-post a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.medium-post a:hover {
+  text-decoration: underline;
+} */
+
 
 **
   *
@@ -591,6 +631,11 @@ h5 {
   padding-bottom: 1.8rem;
   color: #888888;
 }
+
+#mytimeline #medium-posts .timeline-content h5 {
+  color: #888888 !important;
+}
+
 #mytimeline .timeline-content h5 {
   color: #888888;
 }
@@ -748,6 +793,7 @@ h5 {
   }
 
   .section-heading {
+    margin-top: 5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 1.5rem;
