@@ -1,0 +1,21 @@
+{
+    "charset": "UTF-8",
+    "httpEquiv": "IE=edge",
+    "favicon": "assets/images/favicon.ico",
+    "title": "Portfolio | Rohit Kumar - Backend Developer & Data Enthusiast",
+    "description": "Explore the portfolio of Rohit Kumar, a software developer with expertise in backend development, scalable architecture, and data processing. Discover his projects, publications, and achievements.",
+    "author": "Rohit Kumar <https://stenzr.github.io/>",
+    "keywords": "Rohit Kumar, software developer, backend development, scalable architecture, data processing, JavaScript, Python, portfolio",
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+    "faviconType": "image/JPG",
+    "faviconPath": "./images/favicon.JPG",
+    "stylesheets": [
+      "https://use.fontawesome.com/releases/v5.1.0/css/all.css",
+      "https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css",
+      "css/styles.css"
+    ],
+    "scripts": [
+      "https://kit.fontawesome.com/2ae45ea238.js"
+    ]
+  }
+  

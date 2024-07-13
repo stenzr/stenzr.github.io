@@ -220,18 +220,18 @@ const initializeElement = (element) => {
 };
 
 const replaceLinksInText = (text, links) => {
-    if (!links || links.length === 0) return text;
+  if (!links || links.length === 0) return text;
 
-    // Sort links by length descending to replace longer phrases first
-    links.sort((a, b) => b.text.length - a.text.length);
+  // Sort links by length descending to replace longer phrases first
+  links.sort((a, b) => b.text.length - a.text.length);
 
-    // Replace each link's text with an anchor tag
-    links.forEach(link => {
-        const linkHTML = `<a target="_blank" href="${link.url}" style="color: whitesmoke; text-decoration: none;">${link.text}</a>`;
-        text = text.replace(new RegExp(link.text, 'g'), linkHTML);
-    });
+  // Replace each link's text with an anchor tag
+  links.forEach((link) => {
+    const linkHTML = `<a target="_blank" href="${link.url}" style="color: whitesmoke; text-decoration: none;">${link.text}</a>`;
+    text = text.replace(new RegExp(link.text, "g"), linkHTML);
+  });
 
-    return text;
+  return text;
 };
 
 // Exports
@@ -333,35 +333,136 @@ export const fetchProfileData = async () => {
     console.error("Error fetching profile data:", error);
   }
 };
-  
+
 // Function to populate the About Me section
 export const populateAboutSection = async () => {
-    try {
-        // Fetch the About Me data
-        const response = await fetch('json_assets/about.json');
-        const data = await response.json();
+  try {
+    // Fetch the About Me data
+    const response = await fetch("json_assets/about.json");
+    const data = await response.json();
 
-        // Populate the section heading
-        const headingElement = document.getElementById('about-heading');
-        if (headingElement) {
-            headingElement.textContent = data.heading;
-        } else {
-            console.error('Heading element not found');
-        }
-
-        // Populate the section content
-        const contentElement = document.getElementById('about-content');
-        if (contentElement) {
-            contentElement.innerHTML = data.content
-                .map(item => {
-                    const contentText = replaceLinksInText(item.text, item.links);
-                    return `<p>${contentText}</p>`;
-                })
-                .join('<br>');
-        } else {
-            console.error('Content element not found');
-        }
-    } catch (error) {
-        console.error('Error fetching About Me data:', error);
+    // Populate the section heading
+    const headingElement = document.getElementById("about-heading");
+    if (headingElement) {
+      headingElement.textContent = data.heading;
+    } else {
+      console.error("Heading element not found");
     }
+
+    // Populate the section content
+    const contentElement = document.getElementById("about-content");
+    if (contentElement) {
+      contentElement.innerHTML = data.content
+        .map((item) => {
+          const contentText = replaceLinksInText(item.text, item.links);
+          return `<p>${contentText}</p>`;
+        })
+        .join("<br>");
+    } else {
+      console.error("Content element not found");
+    }
+  } catch (error) {
+    console.error("Error fetching About Me data:", error);
+  }
+};
+
+export const populateHeadSection = () => {
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      // Fetch the JSON configuration
+      const response = await fetch("json_assets/head_config.json");
+      const config = await response.json();
+
+      // Set the charset
+      if (config.charset) {
+        const metaCharset = document.createElement("meta");
+        metaCharset.setAttribute("charset", config.charset);
+        document.head.appendChild(metaCharset);
+      }
+
+      // Set the http-equiv
+      if (config.httpEquiv) {
+        const metaHttpEquiv = document.createElement("meta");
+        metaHttpEquiv.setAttribute("http-equiv", "X-UA-Compatible");
+        metaHttpEquiv.setAttribute("content", config.httpEquiv);
+        document.head.appendChild(metaHttpEquiv);
+      }
+
+      // Set the favicon
+      if (config.favicon) {
+        const linkFavicon = document.createElement("link");
+        linkFavicon.setAttribute("rel", "shortcut icon");
+        linkFavicon.setAttribute("href", config.favicon);
+        document.head.appendChild(linkFavicon);
+      }
+
+      // Set the title
+      if (config.title) {
+        document.title = config.title;
+      }
+
+      // Set the description
+      if (config.description) {
+        const metaDescription = document.createElement("meta");
+        metaDescription.setAttribute("name", "description");
+        metaDescription.setAttribute("content", config.description);
+        document.head.appendChild(metaDescription);
+      }
+
+      // Set the author
+      if (config.author) {
+        const metaAuthor = document.createElement("meta");
+        metaAuthor.setAttribute("name", "author");
+        metaAuthor.setAttribute("content", config.author);
+        document.head.appendChild(metaAuthor);
+      }
+
+      // Set the keywords
+      if (config.keywords) {
+        const metaKeywords = document.createElement("meta");
+        metaKeywords.setAttribute("name", "keywords");
+        metaKeywords.setAttribute("content", config.keywords);
+        document.head.appendChild(metaKeywords);
+      }
+
+      // Set the viewport
+      if (config.viewport) {
+        const metaViewport = document.createElement("meta");
+        metaViewport.setAttribute("name", "viewport");
+        metaViewport.setAttribute("content", config.viewport);
+        document.head.appendChild(metaViewport);
+      }
+
+      // Set the favicon image type and path
+      if (config.faviconPath) {
+        const linkFaviconPath = document.createElement("link");
+        linkFaviconPath.setAttribute("rel", "icon");
+        linkFaviconPath.setAttribute("type", `image/${config.faviconType}`);
+        linkFaviconPath.setAttribute("href", config.faviconPath);
+        document.head.appendChild(linkFaviconPath);
+      }
+
+      // Add stylesheets
+      if (config.stylesheets && Array.isArray(config.stylesheets)) {
+        config.stylesheets.forEach((href) => {
+          const linkStylesheet = document.createElement("link");
+          linkStylesheet.setAttribute("rel", "stylesheet");
+          linkStylesheet.setAttribute("href", href);
+          document.head.appendChild(linkStylesheet);
+        });
+      }
+
+      // Add scripts
+      if (config.scripts && Array.isArray(config.scripts)) {
+        config.scripts.forEach((src) => {
+          const script = document.createElement("script");
+          script.setAttribute("src", src);
+          script.setAttribute("crossorigin", "anonymous");
+          document.head.appendChild(script);
+        });
+      }
+    } catch (error) {
+      console.error("Error fetching head configuration:", error);
+    }
+  });
 };
