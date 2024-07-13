@@ -27,7 +27,7 @@
   const generateTimeline = (data) => {
     const timelineContainer = document.getElementById("timeline");
     data.forEach((item) => {
-      const timelineBlock = createTimelineBlock(item, "fa-chalkboard-teacher");
+      const timelineBlock = createTimelineBlock(item, "fa-laptop-code");
       timelineContainer.appendChild(timelineBlock);
     });
   };
@@ -70,10 +70,9 @@
   };
 
   // Function to populate education section
-  const populateEducation = (items, containerId, iconClassCollege, iconClassSchool) => {
+  const populateEducation = (items, containerId, iconClass) => {
     const container = document.getElementById(containerId);
     items.forEach((item) => {
-      const iconClass = item.level === "College" ? iconClassCollege : iconClassSchool;
       const block = document.createElement("div");
       block.className = "timeline-block";
       block.innerHTML = `
@@ -99,9 +98,9 @@
 
       const timelineEventsResponse = await fetch("json_assets/timeline_events.json");
       const timelineEventsData = await timelineEventsResponse.json();
-      populateTimeline(timelineEventsData.achievements, "achievements-timeline", "fa-terminal");
-      populateTimeline(timelineEventsData.positions, "positions-timeline", "fa-terminal");
-      populateEducation(timelineEventsData.education, "education-timeline", "fa-user-graduate", "fa-chalkboard-teacher");
+      populateTimeline(timelineEventsData.achievements, "achievements-timeline", "fa-trophy");
+      populateTimeline(timelineEventsData.positions, "positions-timeline", "fa-user-tie");
+      populateEducation(timelineEventsData.education, "education-timeline", "fa-user-graduate");
     } catch (error) {
       console.error("Error fetching timeline data:", error);
     }
