@@ -176,35 +176,40 @@ const fetchTimelineData = async () => {
 // Fetch and display timeline data and Medium posts
 
 const populateSocialIcons = () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    // Inject social media links into the top section
-    const socialTop = document.querySelector(".social-top");
-    if (socialTop) {
-      socialTop.innerHTML = generateSocialLinks("contact-icon-top");
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    // Fetch the JSON file
+    fetch("json_assets/social_links.json")
+      .then((response) => response.json())
+      .then((links_data) => {
+        // Inject social media links into the top section
+        const socialTop = document.querySelector(".social-top");
+        if (socialTop) {
+          socialTop.innerHTML = generateSocialLinks(
+            "contact-icon-top",
+            links_data
+          );
+        }
 
-    // Inject social media links into the bottom section
-    const socialBottom = document.querySelector(".social-bottom");
-    if (socialBottom) {
-      socialBottom.innerHTML = generateSocialLinks("contact-icon-bottom");
-    }
+        // Inject social media links into the bottom section
+        const socialBottom = document.querySelector(".social-bottom");
+        if (socialBottom) {
+          socialBottom.innerHTML = generateSocialLinks(
+            "contact-icon-bottom",
+            links_data
+          );
+        }
+      })
+      .catch((error) =>
+        console.error("Error fetching socialLinks.json:", error)
+      );
   });
 };
 
 // Function to generate social media links
-let generateSocialLinks = (className) => {
-  return `
-    <a target="_blank" class="${className}" href="https://www.github.com/stenzr/"><i class="fab fa-github"></i></a>
-    <!-- <a target="_blank" class="${className}" href="https://www.kaggle.com/stenzr/"><i class="fab fa-kaggle"></i></a> -->
-    <!-- <a target="_blank" class="${className}" href="https://www.instagram.com/__rohit.kumar_/"><i class="fab fa-instagram"></i></a> -->
-    <a target="_blank" class="${className}" href="https://www.linkedin.com/in/rkrohitkr01/"><i class="fab fa-linkedin-in"></i></a>
-    <a target="_blank" class="${className}" href="https://twitter.com/rkrohit01/"><i class="fab fa-twitter"></i></a>
-    <a target="_blank" class="${className}" href="mailto:rkrohitkr01@gmail.com"><i class="fa fa-envelope"></i></a>
-    <a target="_blank" class="${className}" href="https://medium.com/@stenzr"><i class="fa fa-medium"></i></a>
-    <!-- <a target="_blank" class="${className}" href="tel:+91"><i class="fa fa-phone"></i></a> -->
-    <!-- <a target="_blank" class="${className}" href="https://www.facebook.com/rohitRK01/"><i class="fab fa-facebook-f"></i></a> -->
-    <!-- <a target="_blank" class="${className}" href="https://www.fiverr.com/rohit_kumar__/make-machine-learning-models-with-eda-feature-engineering/"><i class="fas fa-coffee"></i></a> -->
-  `;
+let generateSocialLinks = (className, links) => {
+  return links.map(link => `
+      <a target="_blank" class="${className}" href="${link.url}"><i class="${link.icon}"></i></a>
+  `).join('');
 };
 
 populateSocialIcons();
