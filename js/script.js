@@ -1,8 +1,12 @@
 // Function to fetch Medium posts and populate the timeline
 const fetchMediumPosts = async () => {
   try {
-    // Define the Medium username and feed URL
-    const mediumUsername = "stenzr";
+    // Fetch the config JSON to get the Medium username
+    const configResponse = await fetch("json_assets/config.json");
+    const configData = await configResponse.json();
+    const mediumUsername = configData.mediumUsername;
+
+    // Define the Medium feed URL using the fetched username
     const mediumFeedUrl = `https://medium.com/feed/@${mediumUsername}`;
 
     // Fetch the RSS feed data and convert to JSON
@@ -176,40 +180,46 @@ const fetchTimelineData = async () => {
 // Fetch and display timeline data and Medium posts
 
 const populateSocialIcons = () => {
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     // Fetch the JSON file
-    fetch("json_assets/social_links.json")
-      .then((response) => response.json())
-      .then((links_data) => {
-        // Inject social media links into the top section
-        const socialTop = document.querySelector(".social-top");
-        if (socialTop) {
-          socialTop.innerHTML = generateSocialLinks(
-            "contact-icon-top",
-            links_data
-          );
-        }
-
-        // Inject social media links into the bottom section
-        const socialBottom = document.querySelector(".social-bottom");
-        if (socialBottom) {
-          socialBottom.innerHTML = generateSocialLinks(
-            "contact-icon-bottom",
-            links_data
-          );
-        }
-      })
-      .catch((error) =>
-        console.error("Error fetching socialLinks.json:", error)
-      );
+    fetchSocialLinks();
   });
+};
+
+let fetchSocialLinks = async () => {
+  try {
+    // Fetch the JSON file with social links
+    const response = await fetch("json_assets/social_links.json");
+    const linksData = await response.json();
+
+    // Inject social media links into the top section
+    const socialTop = document.querySelector(".social-top");
+    if (socialTop) {
+      socialTop.innerHTML = generateSocialLinks("contact-icon-top", linksData);
+    }
+
+    // Inject social media links into the bottom section
+    const socialBottom = document.querySelector(".social-bottom");
+    if (socialBottom) {
+      socialBottom.innerHTML = generateSocialLinks(
+        "contact-icon-bottom",
+        linksData
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching social links:", error);
+  }
 };
 
 // Function to generate social media links
 let generateSocialLinks = (className, links) => {
-  return links.map(link => `
+  return links
+    .map(
+      (link) => `
       <a target="_blank" class="${className}" href="${link.url}"><i class="${link.icon}"></i></a>
-  `).join('');
+  `
+    )
+    .join("");
 };
 
 populateSocialIcons();
