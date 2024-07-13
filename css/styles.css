@@ -162,8 +162,10 @@ h5 {
   font-weight: 900;
 }
 
-.social {
+.social-top {
   padding-top: 4rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
 }
 .contact-icon-top {
   margin-top: 10px;
@@ -191,6 +193,8 @@ h5 {
 
 .social-bottom {
   padding-top: 4rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
 }
 .contact-icon-bottom {
   margin-top: 10px;
@@ -804,8 +808,10 @@ a:-webkit-any-link {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .social {
+  .social-top {
     padding-top: 1rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
   }
 
   .section-heading {
