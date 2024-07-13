@@ -287,7 +287,7 @@ export const fetchNavBarData = async () => {
 export const fetchMediumPosts = async () => {
   try {
     // Fetch the config JSON to get the Medium username
-    const configResponse = await fetch("json_assets/config.json");
+    const configResponse = await fetch("json_assets/profile.json");
     const configData = await configResponse.json();
     const mediumUsername = configData.mediumUsername;
 
