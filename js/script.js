@@ -8,7 +8,7 @@ async function fetchMediumPosts() {
     const data = await response.json();
     const postsContainer = document.getElementById('medium-posts');
 
-    data.items.slice(0, 5).forEach(item => {
+    data.items.forEach(item => {
         // const postTimelineHeaderElement = document.createElement('div');
         // postTimelineHeaderElement.className = 'timeline-header';
         // postTimelineHeaderElement.innerHTML = `
