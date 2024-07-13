@@ -222,6 +222,41 @@ let generateSocialLinks = (className, links) => {
     .join("");
 };
 
+const generateNavBar = (navData) => {
+  return `
+      <ul>
+        ${navData
+          .map(
+            (item) => `
+          <li class="nav-item">
+            <a href="${item.href}" class="nav-link" ${
+              item.target ? `target="${item.target}"` : ""
+            }>${item.text}</a>
+          </li>
+        `
+          )
+          .join("")}
+      </ul>
+  `;
+};
+
+const fetchNavBarData = async () => {
+  try {
+    // Fetch the JSON file with navigation links
+    const response = await fetch("json_assets/navbar_links.json");
+    const navData = await response.json();
+
+    // Inject navigation bar into the navbar div
+    const navbar = document.querySelector(".navbar-items");
+    if (navbar) {
+      navbar.innerHTML = generateNavBar(navData);
+    }
+  } catch (error) {
+    console.error("Error fetching navigation links:", error);
+  }
+};
+
+fetchNavBarData();
 populateSocialIcons();
 fetchTimelineData();
 fetchMediumPosts();

@@ -1,0 +1,28 @@
+[
+    {
+        "href": "#about",
+        "text": "About Me"
+    },
+    {
+        "href": "https://github.com/stenzr?tab=repositories",
+        "text": "Projects",
+        "target": "_blank"
+    },
+    {
+        "href": "#publications",
+        "text": "Publications"
+    },
+    {
+        "href": "#myscribbles",
+        "text": "Blog"
+    },
+    {
+        "href": "#bottom-container",
+        "text": "Contact Me"
+    },
+    {
+        "href": "https://drive.google.com/file/d/1_8uYa5RUx9eN8B5NuQEil8gGUZIuvXyO/view?usp=sharing",
+        "text": "My Resume",
+        "target": "_blank"
+    }
+]
