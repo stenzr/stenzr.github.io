@@ -1,34 +1,33 @@
 [
-    {
-      "role": "FTE",
-      "period": "May 2022 - Present",
-      "company": "Provakil",
-      "position": "Software Developer (Backend)",
-      "description": [
-        "Design and development of Collections (Notice Generation and Dispatch) Module.",
-        "Involved in the design, implementation and management of Data Governance, compliance, monitoring, alerting, reporting and automation around the product module.",
-        "Implement and Overview all third party integrations to the tool.",
-        "Working in the capacity of lead engineer of integrations team."
-      ]
-    },
-    {
-      "role": "FTE",
-      "period": "Sep 2021 - May 2022",
-      "company": "Deloitte USI",
-      "position": "Analyst",
-      "description": [
-        "Developed APIs for MIS reports and Product Dashboards, implemented the e-invoicing module."
-      ]
-    },
-    {
-      "role": "Internship",
-      "period": "Jan 2021 - July 2021",
-      "company": "Labellerr, Tensormatics",
-      "position": "Machine Learning Intern",
-      "description": [
-        "Implementation of end to end computer vision and text analytics retail use case solutions for the auto label tool on the platform.",
-        "[ Data Gathering > cleaning > model training > API > Containerization > Deployment ]"
-      ]
-    }
-  ]
-  
+  {
+    "role": "FTE",
+    "period": "May 2022 - Present",
+    "company": "Provakil",
+    "position": "Software Developer (Backend)",
+    "description": [
+      "Design and development of Collections (Notice Generation and Dispatch) Module.",
+      "Involved in the design, implementation and management of Data Governance, compliance, monitoring, alerting, reporting and automation around the product module.",
+      "Implement and Overview all third party integrations to the tool.",
+      "Working in the capacity of lead engineer of integrations team."
+    ]
+  },
+  {
+    "role": "FTE",
+    "period": "Sep 2021 - May 2022",
+    "company": "Deloitte USI",
+    "position": "Analyst",
+    "description": [
+      "Developed APIs for MIS reports and Product Dashboards, implemented the e-invoicing module."
+    ]
+  },
+  {
+    "role": "Internship",
+    "period": "Jan 2021 - July 2021",
+    "company": "Labellerr, Tensormatics",
+    "position": "Machine Learning Intern",
+    "description": [
+      "Implementation of end to end computer vision and text analytics retail use case solutions for the auto label tool on the platform.",
+      "[ Data Gathering > cleaning > model training > API > Containerization > Deployment ]"
+    ]
+  }
+]
