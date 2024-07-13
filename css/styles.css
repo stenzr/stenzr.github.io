@@ -74,6 +74,7 @@ h5 {
   text-rendering: optimizeLegibility;
 }
 
+#introduction,
 #firstintro {
   background-color:#070707;
   margin-top: 0;
@@ -755,6 +756,7 @@ a:-webkit-any-link {
 /*for mobiles*/
 
 @media (max-width: 900px) {
+  #introduction,
   #firstintro {
     background-color: #070707;
     margin-top: 0;
