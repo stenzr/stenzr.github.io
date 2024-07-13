@@ -1,4 +1,4 @@
-import { TxtType } from './txtType.js';
+import { TxtType } from "./txtType.js";
 // utilities
 
 // Function to populate Medium posts in the timeline
@@ -180,7 +180,9 @@ let fetchSocialLinks = async () => {
 };
 
 const populateProfile = (data) => {
-  const profileSection = document.getElementById("introduction");
+  const profileSection = document.querySelector(
+    "#introduction .profile-content"
+  );
 
   const profileHTML = `
       <div>
@@ -216,14 +218,14 @@ const initializeElement = (element) => {
     new TxtType(element, JSON.parse(toRotate), period);
   }
 };
-  
+
 // Exports
 
 // Main function to initialize typewriter effects on all elements
 export const initTypewriter = () => {
-    const elements = Array.from(document.getElementsByClassName('typewrite'));
-    elements.forEach(initializeElement);
-  };
+  const elements = Array.from(document.getElementsByClassName("typewrite"));
+  elements.forEach(initializeElement);
+};
 
 // Function to fetch and generate timeline content from JSON
 export const fetchTimelineData = async () => {
@@ -273,6 +275,8 @@ export const fetchNavBarData = async () => {
     const navbar = document.querySelector(".navbar-items");
     if (navbar) {
       navbar.innerHTML = generateNavBar(navData);
+    } else {
+      console.error("Navbar element not found.");
     }
   } catch (error) {
     console.error("Error fetching navigation links:", error);
