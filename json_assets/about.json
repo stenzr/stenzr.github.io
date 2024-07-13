@@ -1,0 +1,36 @@
+{
+    "heading": "About Me",
+    "content": [
+        {
+            "text": "I am a passionate Software Evangelist with a deep appreciation for cutting-edge technologies, primarily working with JS and Python. In my spare time, I love to explore and experiment with new tech and tools."
+        },
+        {
+            "text": "Recently, I automated my new laptop setup using Ansible playbooks. I enjoy starting projects from scratch and delving into the intricate details. When I'm not procrastinating, I blog about my learnings.",
+            "links": [
+                {
+                    "text": "blog",
+                    "url": "https://medium.com/@stenzr"
+                },
+                {
+                    "text": "new laptop setup",
+                    "url": "https://github.com/stenzr/macbook_developement_setup"
+                }
+            ]
+        },
+        {
+            "text": "In my current role, I design and develop scalable solutions to address and automate challenges faced by legal teams through automated workflows and managing third-party integrations."
+        },
+        {
+            "text": "When AFK, I love to ride my Apache RTR 160 4v and explore new places on the road. I'm also a big fan of action and adventure movies and discussing what ifs?."
+        },
+        {
+            "text": "If you find anything interesting, feel free to drop me a Hi! at one of the co-ordinates below. To know more, just keep scrolling...",
+            "links": [
+                {
+                    "text": "co-ordinates below",
+                    "url": "#bottom-container"
+                }
+            ]
+        }
+    ]
+}

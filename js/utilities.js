@@ -219,6 +219,21 @@ const initializeElement = (element) => {
   }
 };
 
+const replaceLinksInText = (text, links) => {
+    if (!links || links.length === 0) return text;
+
+    // Sort links by length descending to replace longer phrases first
+    links.sort((a, b) => b.text.length - a.text.length);
+
+    // Replace each link's text with an anchor tag
+    links.forEach(link => {
+        const linkHTML = `<a target="_blank" href="${link.url}" style="color: whitesmoke; text-decoration: none;">${link.text}</a>`;
+        text = text.replace(new RegExp(link.text, 'g'), linkHTML);
+    });
+
+    return text;
+};
+
 // Exports
 
 // Main function to initialize typewriter effects on all elements
@@ -317,4 +332,36 @@ export const fetchProfileData = async () => {
   } catch (error) {
     console.error("Error fetching profile data:", error);
   }
+};
+  
+// Function to populate the About Me section
+export const populateAboutSection = async () => {
+    try {
+        // Fetch the About Me data
+        const response = await fetch('json_assets/about.json');
+        const data = await response.json();
+
+        // Populate the section heading
+        const headingElement = document.getElementById('about-heading');
+        if (headingElement) {
+            headingElement.textContent = data.heading;
+        } else {
+            console.error('Heading element not found');
+        }
+
+        // Populate the section content
+        const contentElement = document.getElementById('about-content');
+        if (contentElement) {
+            contentElement.innerHTML = data.content
+                .map(item => {
+                    const contentText = replaceLinksInText(item.text, item.links);
+                    return `<p>${contentText}</p>`;
+                })
+                .join('<br>');
+        } else {
+            console.error('Content element not found');
+        }
+    } catch (error) {
+        console.error('Error fetching About Me data:', error);
+    }
 };
