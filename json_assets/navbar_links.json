@@ -18,7 +18,8 @@
     },
     {
         "href": "https://x.com/messages/compose?recipient_id=334004251",
-        "text": "Contact Me"
+        "text": "Contact Me",
+        "target": "_blank"
     },
     {
         "href": "https://drive.google.com/file/d/1_8uYa5RUx9eN8B5NuQEil8gGUZIuvXyO/view?usp=sharing",
