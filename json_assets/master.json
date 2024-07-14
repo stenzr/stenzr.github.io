@@ -1,0 +1,216 @@
+{
+    "about": {
+        "heading": "About Me",
+        "content": [
+            {
+                "text": "I am a passionate Software Evangelist with a deep appreciation for cutting-edge technologies, primarily working with JS and Python. In my spare time, I love to explore and experiment with new tech and tools."
+            },
+            {
+                "text": "Recently, I automated my new laptop setup using Ansible playbooks. I enjoy starting projects from scratch and delving into the intricate details. When I'm not procrastinating, I blog about my learnings.",
+                "links": [
+                    {
+                        "text": "blog",
+                        "url": "https://medium.com/@stenzr"
+                    },
+                    {
+                        "text": "new laptop setup",
+                        "url": "https://github.com/stenzr/macbook_developement_setup"
+                    }
+                ]
+            },
+            {
+                "text": "In my current role, I design and develop scalable solutions to address and automate challenges faced by legal teams through automated workflows and managing third-party integrations."
+            },
+            {
+                "text": "When AFK, I love to ride my Apache RTR 160 4v and explore new places on the road. I'm also a big fan of action and adventure movies and discussing what ifs?."
+            },
+            {
+                "text": "If you find anything interesting, feel free to drop me a Hi! at one of the co-ordinates below. To know more, just keep scrolling...",
+                "links": [
+                    {
+                        "text": "co-ordinates below",
+                        "url": "#bottom-container"
+                    }
+                ]
+            }
+        ]
+    },
+    "education": [
+        {
+            "level": "College",
+            "year": "2016-2021",
+            "institution": "Birla Institute Of Technology, Mesra, Ranchi",
+            "details": "CGPA: 8.33 / 10",
+            "degree": "Integrated Master Of Science in Mathematics And Computing"
+        },
+        {
+            "level": "XII",
+            "year": "2013-2015",
+            "institution": "Vidya Bharati Chinamaya Vidyalaya, Jamshedpur",
+            "details": "Percentage: 90.8%",
+            "degree": "Class 12 with Computer Science Affiliated to CBSE"
+        },
+        {
+            "level": "X",
+            "year": "2012-2013",
+            "institution": "Vig English School, Jamshedpur",
+            "details": "Percentage: 90.2%",
+            "degree": "Secondary High School Affiliated to ICSE"
+        }
+    ],
+    "positions": [
+        {
+            "year": "2018-2019",
+            "title": "Joint General Secretary and Assistant Village Education Program Coordinator, NSS - BIT Mesra",
+            "description": "Co-Leading a team of 10+ members, created a platform for the free education of the underprivileged children of the villages adopted by NSS BIT Mesra. Organised and participated in various Blood donation camps, orphanage visits, Chesire home visits, health camps, conducted various surveys and awareness drives."
+        },
+        {
+            "year": "2018",
+            "title": "RESOURCE CORE (Team Lead)",
+            "description": "Co-lead the Resource Team of Pantheon 2018- annual tech fest of our college."
+        }
+    ],
+    "social_links": [
+        {
+            "url": "https://www.github.com/stenzr/",
+            "icon": "fab fa-github"
+        },
+        {
+            "url": "https://www.linkedin.com/in/rkrohitkr01/",
+            "icon": "fab fa-linkedin-in"
+        },
+        {
+            "url": "https://twitter.com/rkrohit01/",
+            "icon": "fab fa-twitter"
+        },
+        {
+            "url": "mailto:rkrohitkr01@gmail.com",
+            "icon": "fa fa-envelope"
+        },
+        {
+            "url": "https://medium.com/@stenzr",
+            "icon": "fa fa-medium"
+        }
+    ],
+    "achievements": [
+        {
+            "year": "2020",
+            "title": "PUBLICATION - 1",
+            "description": "Heart rate variability time domain features in automated prediction of diabetes in rat.",
+            "source": "Physical and Engineering Sciences in Medicine · Nov 30, 2020",
+            "link": "https://link.springer.com/article/10.1007%2Fs13246-020-00950-8"
+        },
+        {
+            "year": "2019-2020",
+            "title": "PUBLICATION - 2",
+            "description": "Heart rate variability features from nonlinear cardiac dynamics in identification of diabetes using artificial neural network and support vector machine.",
+            "source": "Biocybernetics and Biomedical Engineering · May 24, 2020",
+            "link": "https://www.sciencedirect.com/science/article/abs/pii/S0208521620300590?via%3Dihub"
+        },
+        {
+            "year": "2020",
+            "title": "HACKATHONS",
+            "description": "Got recommended for Smart India Hackathon finals. Ranked in top 3 software teams in Internal Hackathon. Responsibilities: Team Leader && ML Model, API developer",
+            "source": ""
+        }
+    ],
+    "head_config": {
+        "charset": "UTF-8",
+        "httpEquiv": "IE=edge",
+        "favicon": "assets/images/favicon.ico",
+        "title": "Portfolio | Rohit Kumar - Backend Developer & Data Enthusiast",
+        "description": "Explore the portfolio of Rohit Kumar, a software developer with expertise in backend development, scalable architecture, and data processing. Discover his projects, publications, and achievements.",
+        "author": "Rohit Kumar <https://stenzr.github.io/>",
+        "keywords": "Rohit Kumar, software developer, backend development, scalable architecture, data processing, JavaScript, Python, portfolio",
+        "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+        "faviconType": "image/JPG",
+        "faviconPath": "./images/favicon.JPG",
+        "stylesheets": [
+            "https://use.fontawesome.com/releases/v5.1.0/css/all.css",
+            "https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css",
+            "css/styles.css"
+        ],
+        "scripts": [
+            "https://kit.fontawesome.com/2ae45ea238.js"
+        ]
+    },
+    "navbar_links": [
+        {
+            "href": "#about",
+            "text": "About Me"
+        },
+        {
+            "href": "https://github.com/stenzr?tab=repositories",
+            "text": "Projects",
+            "target": "_blank"
+        },
+        {
+            "href": "#publications",
+            "text": "Publications"
+        },
+        {
+            "href": "#myscribbles",
+            "text": "Blog"
+        },
+        {
+            "href": "#bottom-container",
+            "text": "Contact Me"
+        },
+        {
+            "href": "https://drive.google.com/file/d/1_8uYa5RUx9eN8B5NuQEil8gGUZIuvXyO/view?usp=sharing",
+            "text": "My Resume",
+            "target": "_blank"
+        }
+    ],
+    "profile": {
+        "name": "Rohit Kumar",
+        "subtitle": "A curious being, amazed by the possibilities of Data.",
+        "profileImage": "assets/images/profile-pic.png",
+        "typewriteText": [
+            "Hi, I am Rohit...",
+            "A Programmer.",
+            "A Backend Evangelist.",
+            "Interested In",
+            "Distributed Processing.",
+            "Scalable Architecture.",
+            "Data Journeys.",
+            "SAAS",
+            "Workflow Automation",
+            "And OFC BIKES ;)"
+        ],
+        "mediumUsername": "stenzr"
+    },
+    "work_experience": [
+        {
+            "role": "FTE",
+            "period": "May 2022 - Present",
+            "company": "Provakil",
+            "position": "Software Developer (Backend)",
+            "description": [
+                "Design and development of Collections (Notice Generation and Dispatch) Module.",
+                "Involved in the design, implementation and management of Data Governance, compliance, monitoring, alerting, reporting and automation around the product module.",
+                "Implement and Overview all third party integrations to the tool.",
+                "Working in the capacity of lead engineer of integrations team."
+            ]
+        },
+        {
+            "role": "FTE",
+            "period": "Sep 2021 - May 2022",
+            "company": "Deloitte USI",
+            "position": "Analyst",
+            "description": [
+                "Developed APIs for MIS reports and Product Dashboards, implemented the e-invoicing module."
+            ]
+        },
+        {
+            "role": "Internship",
+            "period": "Jan 2021 - July 2021",
+            "company": "Labellerr, Tensormatics",
+            "position": "Machine Learning Intern",
+            "description": [
+                "Implementation of end to end computer vision and text analytics retail use case solutions for the auto label tool on the platform.",
+                "[ Data Gathering > cleaning > model training > API > Containerization > Deployment ]"
+            ]
+        }
+    ]
+}
