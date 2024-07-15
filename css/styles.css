@@ -605,6 +605,17 @@ a:-webkit-any-link {
   left: 35%;
   top: 0;
 }
+
+.wrap {
+  border-right: 0.08em solid #666;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  min-width: 100px; /* Adjust to a suitable value */
+  transition: all 0.4s;
+}
+
+
 #mytimeline .timeline-block {
   position: relative;
   padding-top: 1.5rem;
