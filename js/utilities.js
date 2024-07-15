@@ -457,6 +457,7 @@ export const populateHeadSection = () => {
         config.scripts.forEach((src) => {
           const script = document.createElement("script");
           script.setAttribute("src", src);
+          script.setAttribute("defer", true);
           script.setAttribute("crossorigin", "anonymous");
           document.head.appendChild(script);
         });
