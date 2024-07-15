@@ -108,6 +108,8 @@ h5 {
 .profile-image {
   width: 400px;
   margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .profile-name {
