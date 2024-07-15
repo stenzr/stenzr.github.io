@@ -433,6 +433,27 @@ export const populateHeadSection = () => {
         document.head.appendChild(metaViewport);
       }
 
+      // Add preconnect links
+      if (config.preconnect && Array.isArray(config.preconnect)) {
+        config.preconnect.forEach((href) => {
+          const linkPreconnect = document.createElement("link");
+          linkPreconnect.setAttribute("rel", "preconnect");
+          linkPreconnect.setAttribute("href", href);
+          linkPreconnect.setAttribute("crossorigin", "anonymous");
+          document.head.appendChild(linkPreconnect);
+        });
+      }
+
+      // Add dns-prefetch links (optional)
+      if (config.dnsPrefetch && Array.isArray(config.dnsPrefetch)) {
+        config.dnsPrefetch.forEach((href) => {
+          const linkDnsPrefetch = document.createElement("link");
+          linkDnsPrefetch.setAttribute("rel", "dns-prefetch");
+          linkDnsPrefetch.setAttribute("href", href);
+          document.head.appendChild(linkDnsPrefetch);
+        });
+      }
+
       // Set the favicon image type and path
       if (config.faviconPath) {
         const linkFaviconPath = document.createElement("link");

@@ -9,6 +9,10 @@
     "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
     "faviconType": "image/JPG",
     "faviconPath": "./images/favicon.JPG",
+    "preconnect": [
+      "https://use.fontawesome.com",
+      "https://kit.fontawesome.com"
+    ],
     "stylesheets": [
       "https://use.fontawesome.com/releases/v5.1.0/css/all.css",
       "https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css",
