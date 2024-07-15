@@ -1,0 +1,6 @@
+package-lock.json
+/node_modules
+./node_modules
+./dist/main.min.js
+./dist/txtType.min.js
+./dist/utilities.min.js
