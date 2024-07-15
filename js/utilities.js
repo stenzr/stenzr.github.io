@@ -1,4 +1,4 @@
-import { TxtType } from "./txtType.js";
+import { TxtType } from "./txtType.min.js";
 // utilities
 
 // Function to populate Medium posts in the timeline

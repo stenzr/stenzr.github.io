@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "terser": "^5.31.2"
+  },
+  "scripts": {
+    "minify": "terser js/main.js -o dist/main.min.js && terser js/utilities.js -o dist/utilities.min.js && terser js/txtType.js -o dist/txtType.min.js"
+  }
+}
