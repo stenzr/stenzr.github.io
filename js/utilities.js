@@ -188,7 +188,7 @@ const populateProfile = (data) => {
       <div>
         <img class="profile-image" src="${
           data.profileImage
-        }" alt="profile-image" />
+        }" alt="profile-image" width="200" height="200" />
       </div>
       <div>
         <h1 class="profile-name">${data.name}</h1>

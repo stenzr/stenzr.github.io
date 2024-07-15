@@ -779,6 +779,8 @@ a:-webkit-any-link {
   .profile-image {
     width: 250px;
     margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
   }
 
   .profile-name {
