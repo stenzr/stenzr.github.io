@@ -3,7 +3,10 @@
         "heading": "About Me",
         "content": [
             {
-                "text": "I am a passionate Software Evangelist with a deep appreciation for cutting-edge technologies, primarily working with JS and Python. In my spare time, I love to explore and experiment with new tech and tools."
+                "text": "Driven by curiosity and a strong bias for action, I excel at solving complex technical challenges and driving high-impact projects to completion. With deep expertise in system design, distributed architectures, and large-scale automation, I thrive in fast-moving environments that require both strategic thinking and hands-on execution."
+            },
+            {
+                "text": "I have successfully led and optimized mission-critical systems handling millions of transactions per day, from rule-based automation and large-scale document processing to data pipelines and third-party integrations. I have a strong inclination toward automation and actively seek to eliminate repetitive manual processes, ensuring more efficient and scalable workflows."
             },
             {
                 "text": "Recently, I automated my new laptop setup using Ansible playbooks. I enjoy starting projects from scratch and delving into the intricate details. When I'm not procrastinating, I blog about my learnings.",
@@ -19,7 +22,13 @@
                 ]
             },
             {
-                "text": "In my current role, I design and develop scalable solutions to address and automate challenges faced by legal teams through automated workflows and managing third-party integrations."
+                "text": "Beyond my core work, I enjoy exploring ways to automate tasks that are important but boring , improving productivity and utilize my time better. My ability to stay calm under pressure enables me to navigate ambiguity, solve intricate problems, and deliver high-performing solutions with speed and precision."
+            },
+            {
+                "text": " I also bring strong team leadership, cross-functional collaboration, and product delivery optimization skills. Whether it's enhancing system performance, solving ambiguous problems, or driving innovation, I focus on building solutions that maximize efficiency, reliability, and long-term impact."
+            },
+            {
+                "text": "In my current role, I design and develop scalable solutions to address and automate challenges faced by legal teams through automated workflows and managing third-party integrations and data migrations"
             },
             {
                 "text": "When AFK, I love to ride my Apache RTR 160 4v and explore new places on the road. I'm also a big fan of action and adventure movies and discussing what ifs?."
@@ -118,10 +127,10 @@
         "charset": "UTF-8",
         "httpEquiv": "IE=edge",
         "favicon": "assets/images/favicon.ico",
-        "title": "Portfolio | Rohit Kumar - Backend Developer & Data Enthusiast",
-        "description": "Explore the portfolio of Rohit Kumar, a software developer with expertise in backend development, scalable architecture, and data processing. Discover his projects, publications, and achievements.",
+        "title": "Portfolio | Rohit Kumar - Senior Software Engineer & Data Enthusiast",
+        "description": "Explore the portfolio of Rohit Kumar, a software developer with expertise in full stack development, scalable architecture, and data processing. Discover his projects, publications, and achievements.",
         "author": "Rohit Kumar <https://stenzr.github.io/>",
-        "keywords": "Rohit Kumar, software developer, backend development, scalable architecture, data processing, JavaScript, Python, portfolio",
+        "keywords": "Rohit Kumar, senior software engineer, full stack development, scalable architecture, data processing, JavaScript, Python, portfolio",
         "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
         "faviconType": "image/JPG",
         "faviconPath": "./images/favicon.JPG",
@@ -185,12 +194,17 @@
             "role": "FTE",
             "period": "May 2022 - Present",
             "company": "Provakil",
-            "position": "Software Developer (Backend)",
+            "position": "Senior Software Development Engineer",
             "description": [
+                "Leading cross-functional collaboration across engineering, product, and business teams to align technical execution with organizational goals.",
+                "Owning project leadership, architecture definition and design, and tech strategy, ensuring scalable and maintainable system designs.",
+                "Actively contributing to core systems across platform, devops, product, data and tech strategy, driving hands-on development while solving technical challenges.",
+                "Mentoring junior engineers, fostering a culture of learning, best practices, and collaboration.",
+                "Driving framework thinking and optimization, improving system performance, resource utilization, and overall efficiency.",
                 "Design and development of Collections (Notice Generation and Dispatch) Module.",
                 "Involved in the design, implementation and management of Data Governance, compliance, monitoring, alerting, reporting and automation around the product module.",
                 "Implement and Overview all third party integrations to the tool.",
-                "Working in the capacity of lead engineer of integrations team."
+                "Architecture, developent and delivery of SAAS implementation"
             ]
         },
         {
