@@ -104,12 +104,14 @@ h5 {
 
 #about {
   background-color:#151515;
-  
+}
+
+#coding-stats {
+  background-color:#151515;
 }
 
 #resume {
   background-color:#151515;
-  
 }
 
 .dot-hr {
@@ -2393,23 +2395,23 @@ a:-webkit-any-link {
   }
 }
 
-/* GitHub & LeetCode Stats Section */
+/* GitHub & LeetCode Stats Section - Dark Theme */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .stats-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 2rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .stats-card::before {
@@ -2419,7 +2421,7 @@ a:-webkit-any-link {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(248, 148, 32, 0.05), rgba(237, 35, 48, 0.05));
+  background: linear-gradient(135deg, rgba(248, 148, 32, 0.1), rgba(237, 35, 48, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -2431,57 +2433,102 @@ a:-webkit-any-link {
 
 .stats-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-color: rgba(248, 148, 32, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(248, 148, 32, 0.4);
+  background: linear-gradient(135deg, #252525, #303030);
 }
 
 .stats-header {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.stats-header i {
-  font-size: 2rem;
-  margin-right: 1rem;
+.stats-icon {
   background: linear-gradient(135deg, #f89420, #ed2330);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
+  transition: all 0.3s ease;
 }
 
-.stats-header h3 {
+.stats-card:hover .stats-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(248, 148, 32, 0.4);
+}
+
+.stats-icon i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.stats-title h3 {
   font-size: 1.5rem;
   color: #f0f8ff;
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   font-weight: 600;
 }
 
+.stats-title p {
+  color: #cccccc;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
 .stats-content {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .stat-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: linear-gradient(135deg, #151515, #202020);
+  border-color: rgba(248, 148, 32, 0.3);
+  transform: translateX(5px);
+}
+
+.stat-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  padding: 0.5rem 0;
 }
 
 .stat-label {
-  color: #b0b0b0;
+  color: #e0e0e0;
   font-size: 0.95rem;
   font-weight: 500;
 }
 
 .stat-value {
   color: #f89420;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stats-link {
@@ -2491,10 +2538,11 @@ a:-webkit-any-link {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  background: rgba(248, 148, 32, 0.1);
-  border: 1px solid rgba(248, 148, 32, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  background: rgba(248, 148, 32, 0.15);
+  border: 1px solid rgba(248, 148, 32, 0.3);
+  font-size: 0.9rem;
 }
 
 .stats-link i {
@@ -2503,9 +2551,10 @@ a:-webkit-any-link {
 }
 
 .stats-link:hover {
-  background: rgba(248, 148, 32, 0.2);
-  border-color: rgba(248, 148, 32, 0.4);
-  transform: translateY(-1px);
+  background: rgba(248, 148, 32, 0.25);
+  border-color: rgba(248, 148, 32, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(248, 148, 32, 0.3);
 }
 
 /* Responsive adjustments for stats */
@@ -2519,16 +2568,25 @@ a:-webkit-any-link {
     padding: 1.5rem;
   }
   
-  .stats-header i {
-    font-size: 1.5rem;
+  .stats-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
   
-  .stats-header h3 {
-    font-size: 1.3rem;
+  .stats-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .stat-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   
   .stat-value {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -2537,13 +2595,31 @@ a:-webkit-any-link {
     padding: 1rem;
   }
   
+  .stats-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .stats-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .stats-title h3 {
+    font-size: 1.3rem;
+  }
+  
   .stat-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+    padding: 0.75rem;
   }
   
   .stat-value {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
+}
+
+/* Override section-content background for coding stats */
+#coding-stats .section-content {
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
 }
