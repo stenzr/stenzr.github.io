@@ -394,8 +394,6 @@ export const fetchNavBarData = async () => {
 const initStickyNavigation = () => {
   const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-link");
-  const sideNav = document.getElementById("side-nav");
-  const sideNavItems = document.querySelectorAll(".side-nav-item");
   
   // Sections to monitor
   const sections = [
@@ -409,8 +407,39 @@ const initStickyNavigation = () => {
     { id: "education", name: "Education" }
   ];
 
-  // Initialize side navigation with social icons
-  initSideNavigation();
+  // Initialize sticky buttons with tooltips
+  initStickyButtons();
+  
+  // Initial check for sticky actions visibility
+  const checkStickyActionsVisibility = () => {
+    const scrollY = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const footerElement = document.getElementById("bottom-container");
+    const stickyActions = document.querySelector(".sticky-actions");
+    const introductionElement = document.getElementById("introduction");
+    
+    const isNearFooter = footerElement && 
+      (scrollY + windowHeight) >= (documentHeight - 200);
+    
+    const isInHome = introductionElement && 
+      scrollY < (introductionElement.offsetTop + introductionElement.offsetHeight - 100);
+    
+    if (stickyActions) {
+      if (isInHome || isNearFooter) {
+        stickyActions.style.opacity = "0";
+        stickyActions.style.visibility = "hidden";
+        stickyActions.style.transform = "translateY(-50%) translateX(20px)";
+      } else {
+        stickyActions.style.opacity = "1";
+        stickyActions.style.visibility = "visible";
+        stickyActions.style.transform = "translateY(-50%) translateX(0)";
+      }
+    }
+  };
+  
+  // Check visibility on page load
+  checkStickyActionsVisibility();
 
   // Handle scroll events
   window.addEventListener("scroll", () => {
@@ -418,16 +447,28 @@ const initStickyNavigation = () => {
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
     const footerElement = document.getElementById("bottom-container");
+    const stickyActions = document.querySelector(".sticky-actions");
     
     // Check if we're near the footer
     const isNearFooter = footerElement && 
-      (scrollY + windowHeight) >= (documentHeight - 100);
+      (scrollY + windowHeight) >= (documentHeight - 200);
     
-    // Show side nav after scrolling past introduction, but hide near footer
-    if (scrollY > 200 && !isNearFooter) {
-      sideNav.classList.add("visible");
-    } else {
-      sideNav.classList.remove("visible");
+    // Check if we're in the home section (introduction)
+    const introductionElement = document.getElementById("introduction");
+    const isInHome = introductionElement && 
+      scrollY < (introductionElement.offsetTop + introductionElement.offsetHeight - 100);
+    
+    // Show/hide sticky actions based on position
+    if (stickyActions) {
+      if (isInHome || isNearFooter) {
+        stickyActions.style.opacity = "0";
+        stickyActions.style.visibility = "hidden";
+        stickyActions.style.transform = "translateY(-50%) translateX(20px)";
+      } else {
+        stickyActions.style.opacity = "1";
+        stickyActions.style.visibility = "visible";
+        stickyActions.style.transform = "translateY(-50%) translateX(0)";
+      }
     }
 
     // Update active navigation link based on current section
@@ -468,14 +509,6 @@ const initStickyNavigation = () => {
         link.classList.add("active");
       }
     });
-
-    // Update active class on side navigation items
-    sideNavItems.forEach(item => {
-      item.classList.remove("active");
-      if (item.getAttribute("data-section") === currentSection) {
-        item.classList.add("active");
-      }
-    });
   });
 
   // Smooth scrolling for navigation links
@@ -504,61 +537,34 @@ const initStickyNavigation = () => {
             behavior: "smooth"
           });
         } else {
-          console.log("Target section not found for:", href);
-        }
-      }
-    });
-  });
-
-  // Smooth scrolling for side navigation items
-  sideNavItems.forEach(item => {
-    item.addEventListener("click", (e) => {
-      const href = item.getAttribute("href");
-      
-      if (href.startsWith("#")) {
-        e.preventDefault();
-        const targetSection = document.querySelector(href);
-        
-        if (targetSection) {
-          // Adjust offset based on whether it's a timeline subsection
-          let offset = 80;
-          if (href.includes("work-experience") || href.includes("achievements") || 
-              href.includes("positions") || href.includes("education")) {
-            offset = 100; // Slightly more offset for timeline subsections
+          // Try to find the achievements section specifically
+          if (href === "#achievements") {
+            const achievementsSection = document.getElementById("achievements");
+            if (achievementsSection) {
+              const offsetTop = achievementsSection.offsetTop - 100;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth"
+              });
+            }
           }
-          
-          const offsetTop = targetSection.offsetTop - offset;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: "smooth"
-          });
-        } else {
-          console.log("Target section not found for:", href);
         }
       }
     });
   });
 };
 
-// Function to initialize side navigation with social icons
-const initSideNavigation = async () => {
-  try {
-    const response = await fetch("json_assets/social_links.json");
-    const socialData = await response.json();
-    
-    const sideSocialContainer = document.getElementById("side-social-icons");
-    
-    if (sideSocialContainer) {
-      const socialIconsHtml = socialData.map(link => 
-        `<a href="${link.url}" target="_blank" class="side-social-icon">
-          <i class="${link.icon}"></i>
-        </a>`
-      ).join("");
-      
-      sideSocialContainer.innerHTML = socialIconsHtml;
-    }
-  } catch (error) {
-    console.error("Error loading social icons for side nav:", error);
+// Function to initialize sticky buttons with tooltips
+const initStickyButtons = () => {
+  const resumeBtn = document.querySelector(".resume-btn");
+  const connectBtn = document.querySelector(".connect-btn");
+  
+  if (resumeBtn) {
+    resumeBtn.setAttribute("data-tooltip", "Download Resume");
+  }
+  
+  if (connectBtn) {
+    connectBtn.setAttribute("data-tooltip", "Send Email");
   }
 };
 
@@ -628,6 +634,25 @@ export const populateAboutSection = async () => {
   } catch (error) {
     console.error("Error fetching About Me data:", error);
   }
+};
+
+// Function to populate all section headings
+export const populateSectionHeadings = () => {
+  const headings = {
+    "blog-heading": "MY SCRIBBLES ON MEDIUM",
+    "projects-heading": "PROJECTS",
+    "work-experience-heading": "WORK EXPERIENCE",
+    "achievements-heading": "ACHIEVEMENTS",
+    "positions-heading": "POSITION OF RESPONSIBILITIES",
+    "education-heading": "EDUCATION"
+  };
+
+  Object.entries(headings).forEach(([id, text]) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.textContent = text;
+    }
+  });
 };
 
 export const populateHeadSection = () => {

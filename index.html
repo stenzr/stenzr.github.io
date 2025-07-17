@@ -39,11 +39,27 @@
     <div class="section-content" id="about-content"></div>
   </section>
 
+  <!-- Sticky Resume and Connect Section -->
+  <div class="sticky-actions">
+    <div class="sticky-resume">
+      <a href="https://drive.google.com/file/d/15Bl9c0uY9jjhXVuUpqTi__l5VEiDO0hZ/view?usp=sharing" target="_blank" class="resume-btn">
+        <i class="fas fa-file-alt"></i>
+        <span>Resume</span>
+      </a>
+    </div>
+    <div class="sticky-connect">
+      <a href="mailto:rkrohitkr01@gmail.com?subject=Hello%20Rohit%20Kumar&body=Hi%20Rohit,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0ABest%20regards," class="connect-btn">
+        <i class="fas fa-envelope"></i>
+        <span>Connect</span>
+      </a>
+    </div>
+  </div>
+
   <!-- Blog Section
    ================================================== -->
   <section id="myscribbles">
     <div class="section-heading">
-      <h2>MY SCRIBBLES ON MEDIUM</h2>
+      <h2 id="blog-heading"></h2>
     </div>
     <div class="section-content">
       <div class="blog-grid" id="medium-posts"></div>
@@ -59,7 +75,7 @@
 
     <div class="row mytimeline-timeline" id="work-experience">
       <div class="col-twelve mytimeline-header">
-        <h2>WORK EXPERIENCE</h2>
+        <h2 id="work-experience-heading"></h2>
       </div>
       <div class="col-twelve">
         <div class="timeline-wrap" id="timeline"></div>
@@ -69,7 +85,7 @@
 
     <div class="row mytimeline-timeline" id="achievements">
       <div class="col-twelve mytimeline-header">
-        <h2>ACHIEVEMENTS</h2>
+        <h2 id="achievements-heading"></h2>
       </div>
       <div class="col-twelve">
         <div class="timeline-wrap" id="achievements-timeline"></div>
@@ -78,7 +94,7 @@
 
     <div class="row mytimeline-timeline" id="positions">
       <div class="col-twelve mytimeline-header">
-        <h2>POSITION OF RESPONSIBILITIES</h2>
+        <h2 id="positions-heading"></h2>
       </div>
       <div class="col-twelve">
         <div class="timeline-wrap" id="positions-timeline"></div>
@@ -87,7 +103,7 @@
 
     <div class="row mytimeline-timeline" id="education">
       <div class="col-twelve mytimeline-header">
-        <h2>EDUCATION</h2>
+        <h2 id="education-heading"></h2>
       </div>
       <div class="col-twelve">
         <div class="timeline-wrap" id="education-timeline"></div>
@@ -100,7 +116,7 @@
    ================================================== -->
   <section id="projects">
     <div class="section-heading">
-      <h2>PROJECTS</h2>
+      <h2 id="projects-heading"></h2>
     </div>
     <div class="section-content">
       <div class="projects-grid" id="projects-container"></div>
@@ -141,6 +157,17 @@
           <a href="https://drive.google.com/file/d/15Bl9c0uY9jjhXVuUpqTi__l5VEiDO0hZ/view?usp=sharing" target="_blank">Resume</a>
         </div>
       </div>
+      
+      <div class="footer-section">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to my newsletter for the latest insights on technology, data science, and software development.</p>
+        <div class="footer-newsletter">
+          <a href="https://stenzr.medium.com/subscribe" target="_blank" class="footer-newsletter-btn">
+            <i class="fas fa-envelope"></i>
+            <span>Subscribe to Newsletter</span>
+          </a>
+        </div>
+      </div>
     </div>
     
     <div class="footer-bottom">
@@ -149,42 +176,7 @@
     </div>
   </section>
 
-  <!-- Side Navigation -->
-  <div class="side-nav" id="side-nav">
-    <div class="side-nav-items">
-      <div class="side-nav-top">
-        <a href="#introduction" class="side-nav-item" data-section="Home">
-          <div class="side-nav-text">Home</div>
-        </a>
-        <a href="#about" class="side-nav-item" data-section="About Me">
-          <div class="side-nav-text">About</div>
-        </a>
-        <a href="#myscribbles" class="side-nav-item" data-section="Blog">
-          <div class="side-nav-text">Blog</div>
-        </a>
-        <a href="#work-experience" class="side-nav-item" data-section="Work Experience">
-          <div class="side-nav-text">Work Experience</div>
-        </a>
-        <a href="#achievements" class="side-nav-item" data-section="Achievements">
-          <div class="side-nav-text">Achievements</div>
-        </a>
-        <a href="#positions" class="side-nav-item" data-section="Positions">
-          <div class="side-nav-text">Positions</div>
-        </a>
-        <a href="#education" class="side-nav-item" data-section="Education">
-          <div class="side-nav-text">Education</div>
-        </a>
-        <a href="#projects" class="side-nav-item" data-section="Projects">
-          <div class="side-nav-text">Projects</div>
-        </a>
-      </div>
-      <div class="side-nav-bottom">
-        <div class="side-social-icons" id="side-social-icons">
-          <!-- Social icons will be populated by JavaScript -->
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!--JS
     ===================================================-->

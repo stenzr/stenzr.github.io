@@ -14,54 +14,24 @@
     "github": "https://github.com/stenzr/stenzr.github.io"
   },
   {
-    "title": "Data Pipeline Automation",
-    "description": "Designed and implemented automated data pipelines for legal document processing, handling millions of transactions daily.",
-    "technologies": ["Python", "Apache Airflow", "PostgreSQL", "Redis"],
-    "github": "https://github.com/stenzr/data-pipeline"
+    "title": "spawn parallel instances",
+    "description": "Spawn Parallel Instances is a versatile tool designed to facilitate running multiple instances of various types of scripts with customizable environment variables and arguments. By leveraging its command-line options, you can efficiently manage and execute scripts in parallel, making it an essential tool for developers and system administrators.",
+    "technologies": ["Python", "Shell Scripting"],
+    "link": "https://pypi.org/project/spawn-parallel-instances/",
+    "github": "https://github.com/stenzr/spawn_parallel_instances"
   },
   {
-    "title": "SAAS Implementation",
-    "description": "Architected and delivered multi-tenant SAAS platform with automated workflows and third-party integrations.",
-    "technologies": ["Node.js", "React", "MongoDB", "AWS", "Docker"],
-    "link": "https://saas-platform-demo.com",
-    "github": "https://github.com/stenzr/saas-platform"
+    "title": "grep_excel",
+    "description": "ExcelGrep is an utility for searching through Excel files in a directory (including nested directories) to find cells that match a specified pattern.",
+    "technologies": ["Python", "Shell Scripting"],
+    "link": "https://github.com/stenzr/grep_excel",
+    "github": "https://github.com/stenzr/grep_excel"
   },
   {
-    "title": "Collections Module",
-    "description": "Developed comprehensive notice generation and dispatch system with automated compliance monitoring and reporting.",
-    "technologies": ["Java", "Spring Boot", "MySQL", "Redis", "Apache Kafka"],
-    "github": "https://github.com/stenzr/collections-module"
-  },
-  {
-    "title": "E-Invoicing Module",
-    "description": "Implemented e-invoicing system with API development for MIS reports and product dashboards.",
-    "technologies": ["Python", "Django", "PostgreSQL", "REST APIs"],
-    "github": "https://github.com/stenzr/e-invoicing"
-  },
-  {
-    "title": "Computer Vision Retail Solution",
-    "description": "End-to-end computer vision and text analytics solution for retail use cases, from data gathering to deployment.",
-    "technologies": ["Python", "OpenCV", "TensorFlow", "Docker", "Flask"],
-    "github": "https://github.com/stenzr/retail-cv"
-  },
-  {
-    "title": "Task Automation Framework",
-    "description": "Built a comprehensive framework for automating repetitive tasks across different platforms and workflows.",
-    "technologies": ["Python", "Selenium", "BeautifulSoup", "Cron", "Slack API"],
-    "link": "https://automation-framework-demo.com",
-    "github": "https://github.com/stenzr/task-automation"
-  },
-  {
-    "title": "Real-time Analytics Dashboard",
-    "description": "Created a real-time analytics dashboard for monitoring system performance and user engagement metrics.",
-    "technologies": ["React", "D3.js", "WebSocket", "Node.js", "MongoDB"],
-    "link": "https://analytics-dashboard-demo.com",
-    "github": "https://github.com/stenzr/analytics-dashboard"
-  },
-  {
-    "title": "Microservices Architecture",
-    "description": "Designed and implemented a scalable microservices architecture with service discovery and load balancing.",
-    "technologies": ["Docker", "Kubernetes", "gRPC", "Redis", "PostgreSQL"],
-    "github": "https://github.com/stenzr/microservices-arch"
+    "title": "grep_excel",
+    "description": "ExcelGrep is an utility for searching through Excel files in a directory (including nested directories) to find cells that match a specified pattern.",
+    "technologies": ["Python", "Shell Scripting"],
+    "link": "https://github.com/stenzr/grep_excel",
+    "github": "https://github.com/stenzr/grep_excel"
   }
 ] 
