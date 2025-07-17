@@ -1,22 +1,27 @@
 [
     {
         "url": "https://www.github.com/stenzr/",
-        "icon": "fab fa-github"
+        "icon": "fab fa-github",
+        "text": "GitHub"
     },
     {
         "url": "https://www.linkedin.com/in/rkrohitkr01/",
-        "icon": "fab fa-linkedin-in"
+        "icon": "fab fa-linkedin-in",
+        "text": "LinkedIn"
     },
     {
         "url": "https://twitter.com/rkrohit01/",
-        "icon": "fab fa-twitter"
+        "icon": "fab fa-twitter",
+        "text": "Twitter"
     },
     {
         "url": "mailto:rkrohitkr01@gmail.com",
-        "icon": "fa fa-envelope"
+        "icon": "fa fa-envelope",
+        "text": "Email"
     },
     {
         "url": "https://medium.com/@stenzr",
-        "icon": "fa fa-medium"
+        "icon": "fa fa-medium",
+        "text": "Medium"
     }
 ]

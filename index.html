@@ -39,30 +39,25 @@
     <div class="section-content" id="about-content"></div>
   </section>
 
+  <!-- Blog Section
+   ================================================== -->
+  <section id="myscribbles">
+    <div class="section-heading">
+      <h2>MY SCRIBBLES ON MEDIUM</h2>
+    </div>
+    <div class="section-content">
+      <div class="blog-grid" id="medium-posts"></div>
+    </div>
+  </section>
+
   <!-- Timeline Section
    ================================================== -->
   <section id="mytimeline">
 
     <div class="overlay"></div>
-    <div class="row mytimeline-timeline">
-
-      <div class="col-twelve mytimeline-header">
-        <section id="myscribbles">
-          <h2>MY SCRIBBLES ON MEDIUM</h2>
-          <div class="col-twelve">
-
-            <div class="timeline-block" style="text-align: center">
-              <!-- Embed Medium Profile -->
-              <div id="medium-posts"></div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </div>
 
 
-    <div class="row mytimeline-timeline">
+    <div class="row mytimeline-timeline" id="work-experience">
       <div class="col-twelve mytimeline-header">
         <h2>WORK EXPERIENCE</h2>
       </div>
@@ -72,7 +67,7 @@
     </div>
 
 
-    <div class="row mytimeline-timeline">
+    <div class="row mytimeline-timeline" id="achievements">
       <div class="col-twelve mytimeline-header">
         <h2>ACHIEVEMENTS</h2>
       </div>
@@ -81,7 +76,7 @@
       </div>
     </div>
 
-    <div class="row mytimeline-timeline">
+    <div class="row mytimeline-timeline" id="positions">
       <div class="col-twelve mytimeline-header">
         <h2>POSITION OF RESPONSIBILITIES</h2>
       </div>
@@ -90,7 +85,7 @@
       </div>
     </div>
 
-    <div class="row mytimeline-timeline">
+    <div class="row mytimeline-timeline" id="education">
       <div class="col-twelve mytimeline-header">
         <h2>EDUCATION</h2>
       </div>
@@ -112,6 +107,8 @@
     </div>
   </section>
 
+
+
   <hr>
 
   <!--Footer
@@ -119,13 +116,75 @@
 
   <!-- Social Media Section at the Bottom -->
   <section id="bottom-container">
-    <div>
-      <div class="social-bottom"></div>
-      <div>
-        <p class="copyright">© <a href="https://stenzr.github.io/" target="_blank" class="copyright">Rohit Kumar</a></p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Get In Touch</h3>
+        <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and innovation.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>rkrohitkr01@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>India</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="#about">About Me</a>
+          <a href="#projects">Projects</a>
+          <a href="#myscribbles">Blog</a>
+          <a href="https://drive.google.com/file/d/15Bl9c0uY9jjhXVuUpqTi__l5VEiDO0hZ/view?usp=sharing" target="_blank">Resume</a>
+        </div>
       </div>
     </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2024 <a href="https://stenzr.github.io/" target="_blank" class="copyright">Rohit Kumar</a>. All rights reserved.</p>
+      <p class="footer-quote">"The best way to predict the future is to invent it." - Alan Kay</p>
+    </div>
   </section>
+
+  <!-- Side Navigation -->
+  <div class="side-nav" id="side-nav">
+    <div class="side-nav-items">
+      <div class="side-nav-top">
+        <a href="#introduction" class="side-nav-item" data-section="Home">
+          <div class="side-nav-text">Home</div>
+        </a>
+        <a href="#about" class="side-nav-item" data-section="About Me">
+          <div class="side-nav-text">About</div>
+        </a>
+        <a href="#myscribbles" class="side-nav-item" data-section="Blog">
+          <div class="side-nav-text">Blog</div>
+        </a>
+        <a href="#work-experience" class="side-nav-item" data-section="Work Experience">
+          <div class="side-nav-text">Work Experience</div>
+        </a>
+        <a href="#achievements" class="side-nav-item" data-section="Achievements">
+          <div class="side-nav-text">Achievements</div>
+        </a>
+        <a href="#positions" class="side-nav-item" data-section="Positions">
+          <div class="side-nav-text">Positions</div>
+        </a>
+        <a href="#education" class="side-nav-item" data-section="Education">
+          <div class="side-nav-text">Education</div>
+        </a>
+        <a href="#projects" class="side-nav-item" data-section="Projects">
+          <div class="side-nav-text">Projects</div>
+        </a>
+      </div>
+      <div class="side-nav-bottom">
+        <div class="side-social-icons" id="side-social-icons">
+          <!-- Social icons will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!--JS
     ===================================================-->

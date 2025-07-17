@@ -7,10 +7,34 @@ const populateMediumPosts = (posts) => {
 
   // Create and append elements for each Medium post
   posts.forEach((item) => {
-    const postTimelineContentElement = document.createElement("div");
-    postTimelineContentElement.className = "medium-individual-post";
-    postTimelineContentElement.innerHTML = `<h5><a href="${item.link}" target="_blank">${item.title}</a></h5>`;
-    postsContainer.appendChild(postTimelineContentElement);
+    const blogCard = document.createElement("div");
+    blogCard.className = "blog-card";
+    
+    // Format the date
+    const publishDate = new Date(item.pubDate);
+    const formattedDate = publishDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+    
+    // Create excerpt from content (first 150 characters)
+    const excerpt = item.content ? 
+      item.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...' : 
+      'Read the full article on Medium...';
+    
+    blogCard.innerHTML = `
+      <div class="blog-title">
+        <a href="${item.link}" target="_blank">${item.title}</a>
+      </div>
+      <div class="blog-excerpt">${excerpt}</div>
+      <div class="blog-meta">
+        <div class="blog-date">${formattedDate}</div>
+        <a href="${item.link}" target="_blank" class="blog-read-more">Read More</a>
+      </div>
+    `;
+    
+    postsContainer.appendChild(blogCard);
   });
 };
 
@@ -28,19 +52,29 @@ const generateWorkExperienceTimeline = (data) => {
 // Function to create a timeline block element
 const createTimelineBlock = (item, iconClass) => {
   const timelineBlock = document.createElement("div");
-  timelineBlock.className = "timeline-block";
+  timelineBlock.className = "timeline-block work-experience-card";
   timelineBlock.style.textAlign = "center";
 
-  // Define the inner HTML for the timeline block
+  // Create a more structured and visually appealing layout
+  const descriptionList = item.description.map(desc => `<li>${desc}</li>`).join("");
+  
+  // Define the inner HTML for the timeline block with improved structure
   timelineBlock.innerHTML = `
-        <div class="timeline-ico"><i class="fa ${iconClass}"></i></div>
-        <div class="timeline-header"><h3>${
-          item.role
-        }</h3><p style="text-align: center;">${item.period}</p></div>
-        <div class="timeline-content">
-          <h4>${item.company}</h4>
-          <h5>${item.position}</h5>
-          <p>${item.description.join("<br>")}</p>
+        <div class="timeline-ico work-experience-icon"><i class="fa ${iconClass}"></i></div>
+        <div class="timeline-header work-experience-header">
+          <div class="work-role-badge">${item.role}</div>
+          <h3 class="work-period">${item.period}</h3>
+        </div>
+        <div class="timeline-content work-experience-content">
+          <div class="work-company-info">
+            <h4 class="work-company">${item.company}</h4>
+            <h5 class="work-position">${item.position}</h5>
+          </div>
+          <div class="work-description">
+            <ul class="work-achievements">
+              ${descriptionList}
+            </ul>
+          </div>
         </div>
       `;
   return timelineBlock;
@@ -49,79 +83,83 @@ const createTimelineBlock = (item, iconClass) => {
 // Function to populate achievements section
 const populateAchievements = (items) => {
   const container = document.getElementById("achievements-timeline");
+  if (!container) return;
 
-  // Create and append timeline blocks for each achievement item
   items.forEach((item) => {
-    const block = document.createElement("div");
-    block.className = "timeline-block";
-
-    // Define the inner HTML for the achievement block
-    block.innerHTML = `
-          <div class="timeline-ico"><i class="fa fa-trophy"></i></div>
-          <div class="timeline-header"><h3>${item.year}</h3></div>
-          <div class="timeline-content" style="text-align: center; justify-content: center;">
-            <h5>${item.title}</h5>
-            <p>${item.description}<br>${item.source}</p>
-            ${
-              item.link
-                ? `<a href="${item.link}" style="color: aqua;" target="_blank">View Publication</a>`
-                : ""
-            }
-          </div>
-        `;
-    container.appendChild(block);
-    container.appendChild(document.createElement("br"));
+    const card = document.createElement("div");
+    card.className = "achievement-card";
+    
+    const linkHtml = item.link ? 
+      `<div class="achievement-link"><a href="${item.link}" target="_blank">View Publication</a></div>` : "";
+    
+    card.innerHTML = `
+      <div class="achievement-header">
+        <div class="achievement-icon"><i class="fa fa-trophy"></i></div>
+        <div class="achievement-year">${item.year}</div>
+      </div>
+      <div class="achievement-content">
+        <h3 class="achievement-title">${item.title}</h3>
+        <p class="achievement-description">${item.description}</p>
+        <p class="achievement-source">${item.source}</p>
+        ${linkHtml}
+      </div>
+    `;
+    
+    container.appendChild(card);
   });
 };
 
 // Function to populate positions section
 const populatePositions = (items) => {
   const container = document.getElementById("positions-timeline");
+  if (!container) return;
 
-  // Create and append timeline blocks for each position item
   items.forEach((item) => {
-    const block = document.createElement("div");
-    block.className = "timeline-block";
-
-    // Define the inner HTML for the position block
-    block.innerHTML = `
-          <div class="timeline-ico"><i class="fa fa-user-tie"></i></div>
-          <div class="timeline-header"><h3>${item.year}</h3></div>
-          <div class="timeline-content" style="text-align: center; justify-content: center;">
-            <h5>${item.title}</h5>
-            <p>${item.description}</p>
-          </div>
-        `;
-    container.appendChild(block);
-    container.appendChild(document.createElement("br"));
+    const card = document.createElement("div");
+    card.className = "position-card";
+    
+    card.innerHTML = `
+      <div class="position-header">
+        <div class="position-icon"><i class="fa fa-user-tie"></i></div>
+        <div class="position-year">${item.year}</div>
+      </div>
+      <div class="position-content">
+        <h3 class="position-title">${item.title}</h3>
+        <p class="position-description">${item.description}</p>
+      </div>
+    `;
+    
+    container.appendChild(card);
   });
 };
 
 // Function to populate education section
 const populateEducation = (items) => {
   const container = document.getElementById("education-timeline");
+  if (!container) return;
 
-  // Create and append timeline blocks for each education item
   items.forEach((item) => {
-    const block = document.createElement("div");
-    block.className = "timeline-block";
-
+    const card = document.createElement("div");
+    card.className = "education-card";
+    
     // Determine the appropriate icon class based on education level
     const iconClass =
       item.level === "College" ? "fa-user-graduate" : "fa-chalkboard-teacher";
-
-    // Define the inner HTML for the education block
-    block.innerHTML = `
-          <div class="timeline-ico"><i class="fa ${iconClass}"></i></div>
-          <div class="timeline-header"><h3>${item.level}</h3><p style="text-align: center;">${item.year}</p></div>
-          <div class="timeline-content" style="text-align: center; justify-content: center;">
-            <h4>${item.institution}</h4>
-            <h5>${item.details}</h5>
-            <p>${item.degree}</p>
-          </div>
-        `;
-    container.appendChild(block);
-    container.appendChild(document.createElement("br"));
+    
+    card.innerHTML = `
+      <div class="education-header">
+        <div class="education-icon"><i class="fa ${iconClass}"></i></div>
+        <div class="education-level">${item.level}</div>
+        <div class="education-year">${item.year}</div>
+      </div>
+      <div class="education-content">
+        <h3 class="education-institution">${item.institution}</h3>
+        <h4 class="education-details">${item.details}</h4>
+        <p class="education-degree">${item.degree}</p>
+      </div>
+    `;
+    
+    container.appendChild(card);
   });
 };
 
@@ -131,6 +169,16 @@ let generateSocialLinks = (className, links) => {
     .map(
       (link) => `
         <a target="_blank" class="${className}" href="${link.url}"><i class="${link.icon}"></i></a>
+    `
+    )
+    .join("");
+};
+
+let generateSocialLinksText = (links) => {
+  return links
+    .map(
+      (link) => `
+        <a target="_blank" href="${link.url}">${link.text || link.platform}</a>
     `
     )
     .join("");
@@ -166,13 +214,16 @@ let fetchSocialLinks = async () => {
       socialTop.innerHTML = generateSocialLinks("contact-icon-top", linksData);
     }
 
-    // Inject social media links into the bottom section
-    const socialBottom = document.querySelector(".social-bottom");
-    if (socialBottom) {
-      socialBottom.innerHTML = generateSocialLinks(
-        "contact-icon-bottom",
-        linksData
-      );
+    // Inject social media links into the footer links section
+    const footerLinks = document.querySelector(".footer-links");
+    if (footerLinks) {
+      linksData.forEach((link) => {
+        const socialLink = document.createElement("a");
+        socialLink.href = link.url;
+        socialLink.target = "_blank";
+        socialLink.textContent = link.text || link.platform;
+        footerLinks.appendChild(socialLink);
+      });
     }
   } catch (error) {
     console.error("Error fetching social links:", error);
@@ -331,8 +382,183 @@ export const fetchNavBarData = async () => {
     } else {
       console.error("Navbar element not found.");
     }
+
+    // Initialize sticky navigation functionality
+    initStickyNavigation();
   } catch (error) {
     console.error("Error fetching navigation links:", error);
+  }
+};
+
+// Function to handle sticky navigation and active section highlighting
+const initStickyNavigation = () => {
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sideNav = document.getElementById("side-nav");
+  const sideNavItems = document.querySelectorAll(".side-nav-item");
+  
+  // Sections to monitor
+  const sections = [
+    { id: "introduction", name: "Home" },
+    { id: "about", name: "About Me" },
+    { id: "projects", name: "Projects" },
+    { id: "myscribbles", name: "Blog" },
+    { id: "work-experience", name: "Work Experience" },
+    { id: "achievements", name: "Achievements" },
+    { id: "positions", name: "Positions" },
+    { id: "education", name: "Education" }
+  ];
+
+  // Initialize side navigation with social icons
+  initSideNavigation();
+
+  // Handle scroll events
+  window.addEventListener("scroll", () => {
+    const scrollY = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const footerElement = document.getElementById("bottom-container");
+    
+    // Check if we're near the footer
+    const isNearFooter = footerElement && 
+      (scrollY + windowHeight) >= (documentHeight - 100);
+    
+    // Show side nav after scrolling past introduction, but hide near footer
+    if (scrollY > 200 && !isNearFooter) {
+      sideNav.classList.add("visible");
+    } else {
+      sideNav.classList.remove("visible");
+    }
+
+    // Update active navigation link based on current section
+    let currentSection = "";
+    let closestSection = null;
+    let minDistance = Infinity;
+    
+    sections.forEach(section => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const sectionTop = element.offsetTop - 150; // Offset for sticky nav
+        const sectionBottom = sectionTop + element.offsetHeight;
+        
+        // Check if we're within this section
+        if (scrollY >= sectionTop && scrollY < sectionBottom) {
+          currentSection = section.name;
+          return; // Found the current section, no need to continue
+        }
+        
+        // If not within any section, find the closest one
+        const distance = Math.abs(scrollY - sectionTop);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestSection = section.name;
+        }
+      }
+    });
+    
+    // If no section is currently active, use the closest one
+    if (!currentSection && closestSection) {
+      currentSection = closestSection;
+    }
+
+    // Update active class on navigation links
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.textContent === currentSection) {
+        link.classList.add("active");
+      }
+    });
+
+    // Update active class on side navigation items
+    sideNavItems.forEach(item => {
+      item.classList.remove("active");
+      if (item.getAttribute("data-section") === currentSection) {
+        item.classList.add("active");
+      }
+    });
+  });
+
+  // Smooth scrolling for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      
+      // Only handle internal links
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        
+        if (targetSection) {
+          // Adjust offset based on section type
+          let offset = 80;
+          if (href.includes("work-experience") || href.includes("achievements") || 
+              href.includes("positions") || href.includes("education")) {
+            offset = 100; // More offset for timeline subsections
+          } else if (href === "#introduction") {
+            offset = 60; // Less offset for home section
+          }
+          
+          const offsetTop = targetSection.offsetTop - offset;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+        } else {
+          console.log("Target section not found for:", href);
+        }
+      }
+    });
+  });
+
+  // Smooth scrolling for side navigation items
+  sideNavItems.forEach(item => {
+    item.addEventListener("click", (e) => {
+      const href = item.getAttribute("href");
+      
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        
+        if (targetSection) {
+          // Adjust offset based on whether it's a timeline subsection
+          let offset = 80;
+          if (href.includes("work-experience") || href.includes("achievements") || 
+              href.includes("positions") || href.includes("education")) {
+            offset = 100; // Slightly more offset for timeline subsections
+          }
+          
+          const offsetTop = targetSection.offsetTop - offset;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+        } else {
+          console.log("Target section not found for:", href);
+        }
+      }
+    });
+  });
+};
+
+// Function to initialize side navigation with social icons
+const initSideNavigation = async () => {
+  try {
+    const response = await fetch("json_assets/social_links.json");
+    const socialData = await response.json();
+    
+    const sideSocialContainer = document.getElementById("side-social-icons");
+    
+    if (sideSocialContainer) {
+      const socialIconsHtml = socialData.map(link => 
+        `<a href="${link.url}" target="_blank" class="side-social-icon">
+          <i class="${link.icon}"></i>
+        </a>`
+      ).join("");
+      
+      sideSocialContainer.innerHTML = socialIconsHtml;
+    }
+  } catch (error) {
+    console.error("Error loading social icons for side nav:", error);
   }
 };
 
