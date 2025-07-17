@@ -5,6 +5,11 @@
         "text": "GitHub"
     },
     {
+        "url": "https://leetcode.com/stenzr/",
+        "icon": "fas fa-code",
+        "text": "LeetCode"
+    },
+    {
         "url": "https://www.linkedin.com/in/rkrohitkr01/",
         "icon": "fab fa-linkedin-in",
         "text": "LinkedIn"

@@ -1,4 +1,15 @@
-import { populateHeadSection, fetchProfileData, populateAboutSection, fetchMediumPosts, fetchTimelineData, populateSocialIcons, fetchNavBarData, populateSectionHeadings, fetchSocialLinks } from './utilities.js';
+import { 
+  populateHeadSection, 
+  fetchProfileData, 
+  populateAboutSection, 
+  fetchMediumPosts, 
+  fetchTimelineData, 
+  populateSocialIcons, 
+  fetchNavBarData, 
+  populateSectionHeadings, 
+  fetchSocialLinks,
+  populateCodingStats 
+} from './utilities.js';
 
 // ensure that js is called after the dom is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,4 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchSocialLinks();
   fetchTimelineData();
   fetchMediumPosts();
+  populateCodingStats();
 });

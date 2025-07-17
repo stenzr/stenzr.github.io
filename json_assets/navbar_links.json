@@ -4,6 +4,10 @@
         "text": "About Me"
     },
     {
+        "href": "#coding-stats",
+        "text": "Coding Stats"
+    },
+    {
         "href": "#projects",
         "text": "Projects"
     },
