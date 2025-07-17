@@ -7,8 +7,7 @@ import {
   populateSocialIcons, 
   fetchNavBarData, 
   populateSectionHeadings, 
-  fetchSocialLinks,
-  populateCodingStats 
+  fetchSocialLinks
 } from './utilities.js';
 
 // ensure that js is called after the dom is fully loaded
@@ -22,5 +21,4 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchSocialLinks();
   fetchTimelineData();
   fetchMediumPosts();
-  populateCodingStats();
 });
