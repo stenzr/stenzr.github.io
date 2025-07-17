@@ -863,3 +863,132 @@ a:-webkit-any-link {
     display: none;
   }
 }
+
+/* Projects Section Styles */
+#projects {
+  background-color: #151515;
+  padding: 4rem 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 200px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: #f89420;
+}
+
+.project-title {
+  font-family: "poppins-semibold", sans-serif;
+  font-size: 1.2rem;
+  color: #f0f8ff;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+.project-period {
+  color: #888888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: #888888;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.project-technologies {
+  margin-bottom: 1rem;
+}
+
+.project-technologies strong {
+  color: #f0f8ff;
+  font-size: 0.9rem;
+}
+
+.project-technologies span {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  color: #f0f8ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid #f0f8ff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #f89420;
+  background-image: linear-gradient(to right, #f89420, #ed2330);
+  color: #fff;
+  border-color: #f89420;
+}
+
+.project-status {
+  display: inline-block;
+  background: linear-gradient(to right, #f89420, #ed2330);
+  color: #fff;
+  padding: 0.2rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive design for project cards */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem 0.5rem;
+  }
+}

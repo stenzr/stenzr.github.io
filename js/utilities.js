@@ -266,9 +266,47 @@ export const fetchTimelineData = async () => {
     const educationResponse = await fetch("json_assets/education.json");
     const educationData = await educationResponse.json();
     populateEducation(educationData);
+
+    // Fetch projects data
+    const projectsResponse = await fetch("json_assets/projects.json");
+    const projectsData = await projectsResponse.json();
+    populateProjects(projectsData);
   } catch (error) {
     console.error("Error fetching timeline data:", error);
   }
+};
+
+// Function to populate projects section
+const populateProjects = (items) => {
+  const container = document.getElementById("projects-container");
+  if (!container) return;
+  
+  items.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "project-card";
+    
+    const technologiesHtml = item.technologies ? 
+      `<div class="project-technologies"><strong>Technologies:</strong> <span>${item.technologies.join(", ")}</span></div>` : "";
+    
+    const linksHtml = [];
+    if (item.link) {
+      linksHtml.push(`<a href="${item.link}" target="_blank">Live Demo</a>`);
+    }
+    if (item.github) {
+      linksHtml.push(`<a href="${item.github}" target="_blank">GitHub</a>`);
+    }
+    const linksSection = linksHtml.length > 0 ? 
+      `<div class="project-links">${linksHtml.join("")}</div>` : "";
+    
+    card.innerHTML = `
+      <div class="project-title">${item.title}</div>
+      <div class="project-description">${item.description}</div>
+      ${technologiesHtml}
+      ${linksSection}
+    `;
+    
+    container.appendChild(card);
+  });
 };
 
 // Fetch and display timeline data and Medium posts
