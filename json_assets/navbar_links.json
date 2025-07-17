@@ -4,9 +4,8 @@
         "text": "About Me"
     },
     {
-        "href": "https://github.com/stenzr?tab=repositories",
-        "text": "Projects",
-        "target": "_blank"
+        "href": "#projects",
+        "text": "Projects"
     },
     {
         "href": "#publications",
