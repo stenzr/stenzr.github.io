@@ -745,10 +745,7 @@ h5 {
     margin-top: 2rem;
   }
   
-  .section-heading::before {
-    width: 40px;
-    height: 2px;
-  }
+
 
   .section-heading::after {
     width: 50px;
@@ -802,18 +799,7 @@ h5 {
   margin-bottom: 2rem;
 }
 
-.section-heading::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, #007bff, #8a2be2);
-  border-radius: 2px;
-  opacity: 0.8;
-}
+
 
 .section-heading::after {
   content: '';
@@ -1202,9 +1188,9 @@ a:-webkit-any-link {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #007bff, #8a2be2);
+  background: transparent;
   border-radius: 2px;
-  opacity: 0.8;
+  opacity: 0;
 }
 
 #mytimeline .mytimeline-header h2::after {
@@ -1621,10 +1607,7 @@ a:-webkit-any-link {
     letter-spacing: 0.5px;
   }
   
-  .section-heading::before {
-    width: 50px;
-    height: 3px;
-  }
+
   
   .section-heading::after {
     width: 70px;
