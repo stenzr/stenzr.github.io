@@ -202,7 +202,7 @@ const generateNavBar = (navData) => {
     `;
 };
 
-let fetchSocialLinks = async () => {
+export const fetchSocialLinks = async () => {
   try {
     // Fetch the JSON file with social links
     const response = await fetch("json_assets/social_links.json");
@@ -218,6 +218,9 @@ let fetchSocialLinks = async () => {
     const footerLinks = document.querySelector(".footer-links");
     if (footerLinks) {
       linksData.forEach((link) => {
+        // Skip Medium since it's already in the HTML
+        if (link.text === "Medium") return;
+        
         const socialLink = document.createElement("a");
         socialLink.href = link.url;
         socialLink.target = "_blank";
@@ -363,10 +366,8 @@ const populateProjects = (items) => {
 // Fetch and display timeline data and Medium posts
 
 export const populateSocialIcons = () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    // Fetch the JSON file
-    fetchSocialLinks();
-  });
+  // This function is now just a placeholder since fetchSocialLinks is called directly
+  // from main.js to ensure proper execution order
 };
 
 export const fetchNavBarData = async () => {
@@ -654,6 +655,8 @@ export const populateSectionHeadings = () => {
     }
   });
 };
+
+
 
 export const populateHeadSection = () => {
   document.addEventListener("DOMContentLoaded", async () => {
