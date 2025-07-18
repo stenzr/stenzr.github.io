@@ -53,27 +53,26 @@ const generateWorkExperienceTimeline = (data) => {
 const createTimelineBlock = (item, iconClass) => {
   const timelineBlock = document.createElement("div");
   timelineBlock.className = "timeline-block work-experience-card";
-  timelineBlock.style.textAlign = "center";
 
   // Create a more structured and visually appealing layout
   const descriptionList = item.description.map(desc => `<li>${desc}</li>`).join("");
   
   // Define the inner HTML for the timeline block with improved structure
   timelineBlock.innerHTML = `
-        <div class="timeline-ico work-experience-icon"><i class="fa ${iconClass}"></i></div>
         <div class="timeline-header work-experience-header">
-          <div class="work-role-badge">${item.role}</div>
-          <h3 class="work-period">${item.period}</h3>
-        </div>
-        <div class="timeline-content work-experience-content">
-          <div class="work-company-info">
-            <h4 class="work-company">${item.company}</h4>
-            <h5 class="work-position">${item.position}</h5>
-          </div>
-          <div class="work-description">
-            <ul class="work-achievements">
-              ${descriptionList}
-            </ul>
+          <div class="timeline-ico work-experience-icon"><i class="fa ${iconClass}"></i></div>
+          <div class="work-experience-content">
+            <div class="work-role-badge">${item.role}</div>
+            <h3 class="work-period">${item.period}</h3>
+            <div class="work-company-info">
+              <h4 class="work-company">${item.company}</h4>
+              <h5 class="work-position">${item.position}</h5>
+            </div>
+            <div class="work-description">
+              <ul class="work-achievements">
+                ${descriptionList}
+              </ul>
+            </div>
           </div>
         </div>
       `;

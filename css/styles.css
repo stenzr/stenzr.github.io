@@ -233,6 +233,14 @@ h5 {
   visibility: hidden;
 }
 
+/* Show sticky actions on mobile by default */
+@media (max-width: 768px) {
+  .sticky-actions {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .sticky-resume,
 .sticky-connect {
   position: relative;
@@ -536,6 +544,26 @@ h5 {
   gap: 1rem;
   align-items: center;
   text-align: center;
+}
+
+/* Mobile override for footer links */
+@media (max-width: 768px) {
+  .footer-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.2rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: stretch !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    grid-template-columns: 1fr !important;
+    gap: 0.1rem !important;
+  }
 }
 
 .footer-links a {
@@ -1244,76 +1272,119 @@ a:-webkit-any-link {
 
 /* Enhanced Work Experience Styling */
 .work-experience-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.work-experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f89420, #ed2330);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-experience-card:hover::before {
+  opacity: 1;
 }
 
 .work-experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-color: rgba(248, 148, 32, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(248, 148, 32, 0.4);
 }
 
 .work-experience-icon {
   background: linear-gradient(135deg, #f89420, #ed2330) !important;
-  box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(248, 148, 32, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .work-experience-card:hover .work-experience-icon {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(248, 148, 32, 0.4);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(248, 148, 32, 0.5);
 }
 
 .work-experience-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .work-role-badge {
   display: inline-block;
   background: linear-gradient(135deg, #f89420, #ed2330);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .work-period {
   color: #f0f8ff !important;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.8rem 0;
+  background: rgba(248, 148, 32, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  border: 1px solid rgba(248, 148, 32, 0.2);
 }
 
 .work-company-info {
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .work-company {
   color: #f89420 !important;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .work-position {
   color: #f0f8ff !important;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
   font-style: italic;
+  opacity: 0.9;
 }
 
 .work-description {
@@ -1327,43 +1398,173 @@ a:-webkit-any-link {
 }
 
 .work-achievements li {
-  color: #888888;
+  color: #d0d0d0;
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
   position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: 8px;
+  border-left: 3px solid rgba(248, 148, 32, 0.3);
+  transition: all 0.3s ease;
+}
+
+.work-achievements li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: #f89420;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(248, 148, 32, 0.2);
+}
+
+.work-achievements li:focus-within {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: #f89420;
+  outline: 2px solid rgba(248, 148, 32, 0.5);
+  outline-offset: 2px;
 }
 
 .work-achievements li::before {
   content: "▸";
   color: #f89420;
   font-weight: bold;
+  font-size: 1.2rem;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 0.8rem;
+  top: 1rem;
 }
 
 /* Responsive adjustments for work experience */
 @media only screen and (max-width: 768px) {
   .work-experience-card {
-    padding: 1.5rem;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+  }
+  
+  .work-experience-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
     margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .work-experience-card .work-experience-icon {
+    width: 50px !important;
+    height: 50px !important;
+    flex-shrink: 0 !important;
+    position: absolute !important;
+    top: 1rem !important;
+    left: 1.5rem !important;
+    margin-left: 0 !important;
+    line-height: normal !important;
+  }
+  
+  .work-experience-icon i {
+    font-size: 1.4rem;
   }
   
   .work-company {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  
+  .work-position {
+    font-size: 1.1rem;
+  }
+  
+  .work-period {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .work-achievements li {
+    font-size: 0.9rem;
+    padding: 0.8rem 0.8rem 0.8rem 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .work-achievements li::before {
+    left: 0.5rem;
+    top: 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .work-role-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 1rem 0.2rem 1rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .work-experience-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 44px; /* Ensure minimum touch target size */
+  }
+  
+  .work-experience-header {
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .work-experience-card .work-experience-icon {
+    width: 45px !important;
+    height: 45px !important;
+    min-width: 45px !important; /* Prevent shrinking */
+    position: absolute !important;
+    top: 0.8rem !important;
+    left: 1.2rem !important;
+    margin-left: 0 !important;
+    line-height: normal !important;
+  }
+  
+  .work-experience-icon i {
     font-size: 1.2rem;
+  }
+  
+  .work-company {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
   }
   
   .work-position {
     font-size: 1rem;
   }
   
-  .work-achievements li {
+  .work-period {
     font-size: 0.9rem;
-    padding-left: 1.2rem;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .work-achievements li {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.7rem 0.7rem 1.8rem;
+    margin-bottom: 0.7rem;
+    min-height: 44px; /* Ensure minimum touch target size */
+  }
+  
+  .work-achievements li::before {
+    left: 0.4rem;
+    top: 0.7rem;
+    font-size: 1rem;
+  }
+  
+  .work-role-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.8rem 0.1rem 0.8rem !important;
+    min-height: 44px; /* Ensure minimum touch target size */
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
   }
 }
+
 #mytimeline .timeline-ico {
   height: 4.8rem;
   width: 4.8rem;
@@ -2536,4 +2737,2129 @@ a:-webkit-any-link {
 /* Remove the old leetcode placeholder styles */
 .leetcode-stats-placeholder {
   display: none;
+}
+
+/* Enhanced Mobile UX Improvements */
+@media (max-width: 768px) {
+  /* Improved touch targets and spacing */
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+    margin: 0.2rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(248, 148, 32, 0.3);
+  }
+
+  /* Enhanced sticky actions for mobile */
+  .sticky-actions {
+    right: 15px;
+    bottom: 20px;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+
+  .resume-btn,
+  .connect-btn {
+    padding: 1rem 0.8rem;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .resume-btn i,
+  .connect-btn i {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .resume-btn span,
+  .connect-btn span {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  /* Enhanced profile section for mobile */
+  .profile-image {
+    width: 200px;
+    border-width: 4px;
+    box-shadow: 
+      0 0 0 6px rgba(248, 148, 32, 0.15),
+      0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-name {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .typewrite {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Enhanced section spacing */
+  .section-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+
+  /* Enhanced stats cards for mobile */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .stats-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 0 0.5rem;
+  }
+
+  .stats-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-icon i {
+    font-size: 1.5rem;
+  }
+
+  .stats-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .stats-title p {
+    font-size: 0.85rem;
+  }
+
+  /* Enhanced project cards for mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .project-links a {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Enhanced blog cards for mobile */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .blog-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .blog-title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .blog-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .blog-read-more {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    min-height: 44px;
+  }
+
+  /* Enhanced timeline for mobile */
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card {
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .work-experience-card:hover,
+  .achievement-card:hover,
+  .position-card:hover,
+  .education-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(248, 148, 32, 0.3);
+  }
+
+  .achievement-header,
+  .position-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Work experience header with left-aligned icon like projects */
+  .work-experience-header {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+  }
+
+  /* Education header with left-aligned icon like projects */
+  .education-header {
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: flex-start;
+  }
+
+  /* Education content container for left-aligned layout */
+  .education-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .achievement-icon,
+  .position-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 0;
+    background: linear-gradient(135deg, #f89420, #ed2330);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  /* Work experience icon with left alignment - override general timeline rules */
+  .work-experience-card .work-experience-icon {
+    width: 45px !important;
+    height: 45px !important;
+    margin-right: 0 !important;
+    background: linear-gradient(135deg, #f89420, #ed2330) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3) !important;
+    transition: all 0.3s ease !important;
+    flex-shrink: 0 !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    position: absolute !important;
+    top: 1rem !important;
+    left: 1.5rem !important;
+    line-height: normal !important;
+    margin-left: 0 !important;
+  }
+
+  /* Education icon with left alignment */
+  .education-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 0;
+    background: linear-gradient(135deg, #f89420, #ed2330);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .work-experience-card:hover .work-experience-icon,
+  .achievement-card:hover .achievement-icon,
+  .position-card:hover .position-icon,
+  .education-card:hover .education-icon {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(248, 148, 32, 0.4) !important;
+  }
+
+  .work-experience-card .work-experience-icon i,
+  .achievement-card .achievement-icon i,
+  .position-card .position-icon i,
+  .education-card .education-icon i {
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  /* Work experience content wrapper for left-aligned layout */
+  .work-experience-content {
+    flex: 1;
+    text-align: left;
+    margin-left: 75px;
+    padding-top: 0.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .work-experience-content {
+      margin-left: 80px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .work-experience-content {
+      margin-left: 70px;
+    }
+  }
+
+  /* Enhanced work experience content for mobile */
+  .work-company {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f0f8ff;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Remove white line before company name in mobile */
+  .work-company::before {
+    display: none;
+  }
+
+  .work-position {
+    font-size: 1rem;
+    color: #f89420;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-period {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    background: rgba(248, 148, 32, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+
+  .work-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #d0d0d0;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .work-achievements {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .work-achievements li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #b0b0b0;
+    margin-bottom: 0.4rem;
+    text-align: left;
+  }
+
+  .work-achievements li::before {
+    content: "▸";
+    color: #f89420;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  /* Enhanced achievement cards for mobile */
+  .achievement-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f8ff;
+    margin-bottom: 0.5rem;
+  }
+
+  .achievement-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+    margin-bottom: 0.5rem;
+  }
+
+  .achievement-year {
+    font-size: 0.8rem;
+    color: #f89420;
+    background: rgba(248, 148, 32, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  /* Enhanced position cards for mobile */
+  .position-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f8ff;
+    margin-bottom: 0.5rem;
+  }
+
+  .position-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+    margin-bottom: 0.5rem;
+  }
+
+  .position-year {
+    font-size: 0.8rem;
+    color: #f89420;
+    background: rgba(248, 148, 32, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  /* Enhanced education cards for mobile */
+  .education-institution {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f8ff;
+    margin-bottom: 0.5rem;
+  }
+
+  .education-degree {
+    font-size: 0.9rem;
+    color: #f89420;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .education-details {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+    margin-bottom: 0.5rem;
+  }
+
+  .education-level,
+  .education-year {
+    font-size: 0.8rem;
+    color: #f89420;
+    background: rgba(248, 148, 32, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  /* Enhanced footer for mobile */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .footer-section {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .contact-item {
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 44px;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links a {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    text-align: center;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .footer-newsletter-btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  /* Enhanced social icons for mobile */
+  .social-top {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-icon-top {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(248, 148, 32, 0.1);
+    border: 1px solid rgba(248, 148, 32, 0.2);
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+  }
+
+  .contact-icon-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(248, 148, 32, 0.3);
+    background: linear-gradient(135deg, #f89420, #ed2330);
+  }
+
+  /* Enhanced navbar for mobile */
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar.sticky {
+    padding: 0.8rem 0;
+    backdrop-filter: blur(20px);
+  }
+
+  .navbar-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  /* Enhanced section spacing */
+  #introduction,
+  #firstintro {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Enhanced about section */
+  #about {
+    padding: 3rem 1rem;
+  }
+
+  /* Enhanced coding stats section */
+  #coding-stats {
+    padding: 3rem 1rem;
+  }
+
+  /* Enhanced projects section */
+  #projects {
+    padding: 3rem 1rem;
+  }
+
+  /* Enhanced blog section */
+  #myscribbles {
+    padding: 3rem 1rem;
+  }
+
+  /* Enhanced timeline section */
+  #mytimeline {
+    padding: 3rem 1rem;
+  }
+
+  /* Enhanced footer section */
+  #bottom-container {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+}
+
+/* Extra small mobile devices (320px and up) */
+@media (max-width: 480px) {
+  /* Further optimized for very small screens */
+  .profile-image {
+    width: 160px;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .profile-subtitle {
+    font-size: 1rem;
+  }
+
+  .typewrite {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+    margin: 0.1rem;
+  }
+
+  .sticky-actions {
+    right: 10px;
+    bottom: 15px;
+    gap: 0.6rem;
+  }
+
+  .resume-btn,
+  .connect-btn {
+    padding: 0.8rem 0.6rem;
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .resume-btn i,
+  .connect-btn i {
+    font-size: 1rem;
+  }
+
+  .resume-btn span,
+  .connect-btn span {
+    font-size: 0.7rem;
+  }
+
+  .section-content {
+    padding: 1rem 0.8rem;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-card {
+    padding: 1.2rem;
+    margin: 0 0.3rem;
+  }
+
+  .stats-header {
+    gap: 0.8rem;
+  }
+
+  .stats-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .stats-icon i {
+    font-size: 1.3rem;
+  }
+
+  .stats-title h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-title,
+  .blog-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description,
+  .blog-excerpt {
+    font-size: 0.85rem;
+  }
+
+  .project-links a,
+  .blog-read-more {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-section {
+    padding: 1.2rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+  }
+
+  .contact-item {
+    padding: 0.8rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .footer-newsletter-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .contact-icon-top {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .social-top {
+    padding: 1.5rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  /* Enhanced spacing for very small screens */
+  #introduction,
+  #firstintro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #about,
+  #coding-stats,
+  #projects,
+  #myscribbles,
+  #mytimeline {
+    padding: 2rem 0.8rem;
+  }
+
+  #bottom-container {
+    padding: 2rem 0.8rem 1.5rem 0.8rem;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  #introduction,
+  #firstintro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    min-height: 100vh;
+  }
+
+  .profile-image {
+    width: 150px;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .profile-subtitle {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    padding-top: 1rem;
+  }
+
+  .sticky-actions {
+    bottom: 15px;
+    right: 10px;
+  }
+}
+
+/* High DPI mobile devices */
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+  .profile-image {
+    border-width: 2px;
+  }
+
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    border-width: 0.5px;
+  }
+}
+
+/* Dark mode optimization for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    background: linear-gradient(135deg, #1a1a1a, #252525);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .contact-icon-top {
+    background: rgba(248, 148, 32, 0.15);
+    border-color: rgba(248, 148, 32, 0.25);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) and (max-width: 768px) {
+  .profile-image,
+  .typewrite,
+  .nav-link,
+  .contact-icon-top,
+  .resume-btn,
+  .connect-btn,
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    transition: none;
+  }
+
+  .profile-image:hover,
+  .typewrite:hover,
+  .nav-link:hover,
+  .contact-icon-top:hover,
+  .resume-btn:hover,
+  .connect-btn:hover,
+  .stats-card:hover,
+  .project-card:hover,
+  .blog-card:hover,
+  .work-experience-card:hover,
+  .achievement-card:hover,
+  .position-card:hover,
+  .education-card:hover,
+  .footer-section:hover {
+    transform: none;
+  }
+}
+
+/* Mobile-specific touch improvements */
+@media (max-width: 768px) {
+  /* Enhanced touch feedback for all interactive elements */
+  .nav-link:active,
+  .contact-icon-top:active,
+  .resume-btn:active,
+  .connect-btn:active,
+  .project-links a:active,
+  .blog-read-more:active,
+  .footer-links a:active,
+  .footer-newsletter-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
+  /* Improved focus states for accessibility */
+  .nav-link:focus,
+  .contact-icon-top:focus,
+  .resume-btn:focus,
+  .connect-btn:focus,
+  .project-links a:focus,
+  .blog-read-more:focus,
+  .footer-links a:focus,
+  .footer-newsletter-btn:focus {
+    outline: 2px solid #f89420;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  /* Enhanced card interactions */
+  .stats-card:active,
+  .project-card:active,
+  .blog-card:active,
+  .work-experience-card:active,
+  .achievement-card:active,
+  .position-card:active,
+  .education-card:active,
+  .footer-section:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Improved scrolling experience */
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  /* Enhanced sticky actions visibility */
+  .sticky-actions {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInUp 0.3s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Better text readability on mobile */
+  .section-content p,
+  .project-description,
+  .blog-excerpt,
+  .work-description,
+  .achievement-description,
+  .position-description,
+  .education-details {
+    line-height: 1.7;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* Enhanced mobile navigation */
+  .navbar-items {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin: 0 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Improved mobile section transitions */
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  /* Enhanced mobile loading states */
+  .stats-image,
+  .project-card,
+  .blog-card {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Better mobile spacing for content */
+  .section-content > * + * {
+    margin-top: 1.5rem;
+  }
+
+  /* Enhanced mobile typography */
+  h2, h3, h4, h5 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Improved mobile image handling */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Enhanced mobile form elements */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 8px;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #f0f8ff;
+  }
+
+  /* Better mobile link styling */
+  a {
+    -webkit-tap-highlight-color: rgba(248, 148, 32, 0.3);
+  }
+
+  /* Enhanced mobile scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #f89420, #ed2330);
+    border-radius: 3px;
+  }
+
+  /* Improved mobile selection */
+  ::selection {
+    background: rgba(248, 148, 32, 0.3);
+    color: #f0f8ff;
+  }
+
+  /* Enhanced mobile loading indicators */
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .loading::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(248, 148, 32, 0.3);
+    border-top: 3px solid #f89420;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+/* Extra small mobile devices touch improvements */
+@media (max-width: 480px) {
+  /* Enhanced touch targets for very small screens */
+  .nav-link,
+  .contact-icon-top,
+  .resume-btn,
+  .connect-btn,
+  .project-links a,
+  .blog-read-more,
+  .footer-links a,
+  .footer-newsletter-btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* Better spacing for very small screens */
+  .section-content {
+    margin: 0 0.5rem;
+  }
+
+  /* Enhanced readability for very small screens */
+  .section-content p,
+  .project-description,
+  .blog-excerpt,
+  .work-description,
+  .achievement-description,
+  .position-description,
+  .education-details {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Improved mobile navigation for very small screens */
+  .navbar-items {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.8rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* Mobile landscape optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Optimized spacing for landscape */
+  #introduction,
+  #firstintro {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .navbar {
+    padding-top: 0.5rem;
+  }
+
+  .social-top {
+    padding: 1rem 0.5rem;
+  }
+
+  /* Better landscape navigation */
+  .navbar-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  /* Optimize animations for mobile */
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Reduce motion for better performance */
+  .profile-image,
+  .typewrite,
+  .nav-link,
+  .contact-icon-top,
+  .resume-btn,
+  .connect-btn,
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    will-change: transform;
+  }
+
+  /* Optimize mobile rendering */
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    contain: layout style paint;
+  }
+}
+
+/* Final mobile optimizations and enhancements */
+@media (max-width: 768px) {
+  /* Improved mobile loading experience */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Better mobile section spacing */
+  section {
+    position: relative;
+  }
+
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(248, 148, 32, 0.3), transparent);
+  }
+
+  /* Enhanced mobile card shadows */
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Improved mobile text contrast */
+  .section-content p,
+  .project-description,
+  .blog-excerpt,
+  .work-description,
+  .achievement-description,
+  .position-description,
+  .education-details {
+    color: #d0d0d0;
+  }
+
+  /* Enhanced mobile headings */
+  .section-heading h2 {
+    background: linear-gradient(135deg, #f0f8ff, #f89420);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Better mobile navigation spacing */
+  .navbar-items {
+    margin: 0.5rem 1rem;
+  }
+
+  /* Enhanced mobile social icons */
+  .contact-icon-top {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-icon-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .contact-icon-top:hover::before {
+    left: 100%;
+  }
+
+  /* Improved mobile sticky actions */
+  .sticky-actions {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  }
+
+  .resume-btn,
+  .connect-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resume-btn::before,
+  .connect-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .resume-btn:hover::before,
+  .connect-btn:hover::before {
+    left: 100%;
+  }
+
+  /* Enhanced mobile scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better mobile focus management */
+  .nav-link:focus-visible,
+  .contact-icon-top:focus-visible,
+  .resume-btn:focus-visible,
+  .connect-btn:focus-visible,
+  .project-links a:focus-visible,
+  .blog-read-more:focus-visible,
+  .footer-links a:focus-visible,
+  .footer-newsletter-btn:focus-visible {
+    outline: 3px solid #f89420;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  /* Improved mobile loading states */
+  .stats-image {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stats-image:nth-child(1) { animation-delay: 0.1s; }
+  .stats-image:nth-child(2) { animation-delay: 0.2s; }
+  .stats-image:nth-child(3) { animation-delay: 0.3s; }
+
+  /* Enhanced mobile card animations */
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.5s ease-out forwards;
+  }
+
+  @keyframes slideInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Better mobile typography hierarchy */
+  .section-heading h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  .project-title,
+  .blog-title {
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  /* Enhanced mobile spacing */
+  .section-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Improved mobile footer layout */
+  .footer-content {
+    max-width: 100%;
+  }
+
+  .footer-section {
+    max-width: 100%;
+  }
+
+  /* Better mobile link interactions */
+  .project-links a,
+  .blog-read-more,
+  .footer-links a,
+  .footer-newsletter-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-links a::before,
+  .blog-read-more::before,
+  .footer-links a::before,
+  .footer-newsletter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .project-links a:hover::before,
+  .blog-read-more:hover::before,
+  .footer-links a:hover::before,
+  .footer-newsletter-btn:hover::before {
+    left: 100%;
+  }
+
+  /* Enhanced mobile accessibility */
+  .nav-link,
+  .contact-icon-top,
+  .resume-btn,
+  .connect-btn,
+  .project-links a,
+  .blog-read-more,
+  .footer-links a,
+  .footer-newsletter-btn {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Better mobile performance */
+  .stats-card,
+  .project-card,
+  .blog-card,
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card,
+  .footer-section {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Enhanced mobile visual feedback */
+  .nav-link:active,
+  .contact-icon-top:active,
+  .resume-btn:active,
+  .connect-btn:active,
+  .project-links a:active,
+  .blog-read-more:active,
+  .footer-links a:active,
+  .footer-newsletter-btn:active {
+    transform: scale(0.95) translateZ(0);
+  }
+
+  /* Improved mobile section transitions */
+  section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: sectionFadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes sectionFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Enhanced mobile scroll indicators */
+  .section-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #f89420, #ed2330);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+
+  /* Better mobile content organization */
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Enhanced mobile card spacing */
+  .stats-grid,
+  .projects-grid,
+  .blog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Improved mobile responsive images */
+  .stats-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Enhanced mobile navigation feedback */
+  .nav-link.active {
+    background: linear-gradient(135deg, #f89420, #ed2330);
+    box-shadow: 0 4px 15px rgba(248, 148, 32, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Better mobile content readability */
+  .section-content p {
+    text-align: left;
+    hyphens: auto;
+    word-break: break-word;
+  }
+
+  /* Enhanced mobile visual hierarchy */
+  .section-heading {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-heading::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(135deg, #f89420, #ed2330);
+    border-radius: 1px;
+  }
+}
+
+/* Enhanced timeline section for mobile */
+#mytimeline {
+  padding: 2rem 1rem;
+}
+
+#mytimeline .mytimeline-header {
+  margin-bottom: 2rem;
+}
+
+#mytimeline .mytimeline-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#mytimeline .mytimeline-header h2::before,
+#mytimeline .mytimeline-header h2::after {
+  display: none;
+}
+
+/* Enhanced timeline wrap for mobile */
+#mytimeline .timeline-wrap {
+  position: relative;
+  padding: 0;
+}
+
+#mytimeline .timeline-wrap::before {
+  display: none;
+}
+
+/* Enhanced timeline blocks for mobile */
+#mytimeline .timeline-block {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Enhanced timeline icons for mobile */
+#mytimeline .timeline-ico {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
+  z-index: 10;
+}
+
+#mytimeline .timeline-ico i {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Enhanced timeline content for mobile */
+#mytimeline .timeline-content {
+  margin-top: 2rem;
+  padding: 0;
+  text-align: center;
+}
+
+#mytimeline .timeline-header {
+  margin-bottom: 1rem;
+}
+
+#mytimeline .timeline-header h3 {
+  font-size: 1.2rem;
+  color: #f0f8ff;
+  margin-bottom: 0.5rem;
+}
+
+#mytimeline .timeline-header p {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 0.5rem;
+}
+
+#mytimeline .timeline-content h4 {
+  font-size: 1.1rem;
+  color: #f89420;
+  margin-bottom: 0.5rem;
+}
+
+#mytimeline .timeline-content h5 {
+  font-size: 1rem;
+  color: #f0f8ff;
+  margin-bottom: 0.5rem;
+}
+
+  #mytimeline .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #d0d0d0;
+    text-align: left;
+  }
+
+  /* Remove white line from timeline content h4 in mobile */
+  #mytimeline .timeline-content h4::after {
+    display: none !important;
+  }
+
+/* Enhanced work role badge for mobile */
+.work-role-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  color: white;
+  padding: 0.1rem 0.8rem !important;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced work company info for mobile */
+.work-company-info {
+  margin-bottom: 0.8rem;
+}
+
+/* Enhanced timeline animations for mobile */
+.work-experience-card,
+.achievement-card,
+.position-card,
+.education-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: timelineSlideIn 0.6s ease-out forwards;
+}
+
+.work-experience-card:nth-child(1) { animation-delay: 0.1s; }
+.work-experience-card:nth-child(2) { animation-delay: 0.2s; }
+.work-experience-card:nth-child(3) { animation-delay: 0.3s; }
+.work-experience-card:nth-child(4) { animation-delay: 0.4s; }
+.work-experience-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes timelineSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced mobile timeline spacing */
+.mytimeline-timeline {
+  margin-bottom: 3rem;
+}
+
+.mytimeline-timeline:last-child {
+  margin-bottom: 0;
+}
+
+/* Enhanced mobile timeline visual hierarchy */
+.mytimeline-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.mytimeline-header::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  border-radius: 1px;
+}
+
+/* Enhanced mobile timeline card interactions */
+.work-experience-card:active,
+.achievement-card:active,
+.position-card:active,
+.education-card:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Enhanced mobile timeline focus states */
+.work-experience-card:focus-visible,
+.achievement-card:focus-visible,
+.position-card:focus-visible,
+.education-card:focus-visible {
+  outline: 2px solid #f89420;
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Enhanced mobile timeline loading states */
+.timeline-wrap {
+  position: relative;
+}
+
+.timeline-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(248, 148, 32, 0.05), rgba(237, 35, 48, 0.05));
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+/* Enhanced mobile timeline responsive design */
+.timeline-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Enhanced mobile timeline accessibility */
+.work-experience-card,
+.achievement-card,
+.position-card,
+.education-card {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Enhanced mobile timeline performance */
+.work-experience-card,
+.achievement-card,
+.position-card,
+.education-card {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Extra small mobile devices work experience optimizations */
+@media (max-width: 480px) {
+  /* Enhanced work experience cards for very small screens */
+  .work-experience-card,
+  .achievement-card,
+  .position-card,
+  .education-card {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .achievement-header,
+  .position-header {
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  /* Work experience header for very small screens */
+  .work-experience-header {
+    flex-direction: row;
+    text-align: left;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    align-items: flex-start;
+  }
+
+  /* Education header for very small screens */
+  .education-header {
+    flex-direction: row;
+    text-align: left;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    align-items: flex-start;
+  }
+
+  /* Education content for very small screens */
+  .education-content {
+    flex: 1;
+    text-align: left;
+  }
+
+  .work-experience-icon,
+  .achievement-icon,
+  .position-icon,
+  .education-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .work-experience-icon i,
+  .achievement-icon i,
+  .position-icon i,
+  .education-icon i {
+    font-size: 1.1rem;
+  }
+
+  /* Enhanced work experience content for very small screens */
+  .work-company {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .work-position {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .work-period {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .work-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+
+  .work-achievements {
+    padding-left: 1rem;
+  }
+
+  .work-achievements li {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Enhanced achievement cards for very small screens */
+  .achievement-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .achievement-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+
+  .achievement-year {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  /* Enhanced position cards for very small screens */
+  .position-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .position-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+
+  .position-year {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  /* Enhanced education cards for very small screens */
+  .education-institution {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .education-degree {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .education-details {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+
+  .education-level,
+  .education-year {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    margin-right: 0.3rem;
+  }
+
+  /* Enhanced timeline section for very small screens */
+  #mytimeline {
+    padding: 1.5rem 0.8rem;
+  }
+
+  #mytimeline .mytimeline-header {
+    margin-bottom: 1.5rem;
+  }
+
+  #mytimeline .mytimeline-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Enhanced timeline blocks for very small screens */
+  #mytimeline .timeline-block {
+    margin-bottom: 1.2rem;
+  }
+
+  /* Enhanced timeline icons for very small screens */
+  #mytimeline .timeline-ico {
+    width: 35px;
+    height: 35px;
+  }
+
+  #mytimeline .timeline-ico i {
+    font-size: 1rem;
+  }
+
+  /* Enhanced timeline content for very small screens */
+  #mytimeline .timeline-content {
+    margin-top: 1.5rem;
+  }
+
+  #mytimeline .timeline-header {
+    margin-bottom: 0.8rem;
+  }
+
+  #mytimeline .timeline-header h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  #mytimeline .timeline-header p {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  #mytimeline .timeline-content h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  #mytimeline .timeline-content h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  #mytimeline .timeline-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* Enhanced work role badge for very small screens */
+  .work-role-badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Enhanced work company info for very small screens */
+  .work-company-info {
+    margin-bottom: 0.6rem;
+  }
+
+  /* Enhanced mobile timeline spacing for very small screens */
+  .mytimeline-timeline {
+    margin-bottom: 2rem;
+  }
+
+  /* Enhanced mobile timeline visual hierarchy for very small screens */
+  .mytimeline-header::after {
+    width: 50px;
+    height: 1.5px;
+  }
+}
+
+/* Enhanced education content for left-aligned layout */
+.education-content {
+  flex: 1;
+  text-align: left;
+}
+
+.education-institution {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f0f8ff;
+  margin-bottom: 0.4rem;
+}
+
+.education-degree {
+  font-size: 0.9rem;
+  color: #f89420;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.education-details {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #d0d0d0;
+  margin-bottom: 0.4rem;
+}
+
+.education-level,
+.education-year {
+  font-size: 0.8rem;
+  color: #f89420;
+  background: rgba(248, 148, 32, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Enhanced work experience content for left-aligned layout */
+.work-company-info {
+  flex: 1;
+  text-align: left;
+}
+
+.work-company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f0f8ff;
+  margin-bottom: 0.3rem;
+}
+
+/* Remove white line before company name in mobile */
+.work-company::before {
+  display: none;
+}
+
+.work-position {
+  font-size: 1rem;
+  color: #f89420;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.work-period {
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  background: rgba(248, 148, 32, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.work-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.work-achievements {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.work-achievements li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #b0b0b0;
+  margin-bottom: 0.4rem;
+  text-align: left;
+}
+
+.work-achievements li::before {
+  content: "▸";
+  color: #f89420;
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
