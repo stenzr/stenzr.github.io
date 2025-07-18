@@ -1045,19 +1045,8 @@ a:-webkit-any-link {
 } */
 
 
-**
-  *
-  small
-  screens
-  -
-  (_grid.scss)
-  *
-  ---------------------------------------------------------------
-  */
-  @media
-  screen
-  and
-  (max-width:1024px) {
+/* small screens - (_grid.scss) */
+  @media screen and (max-width: 1024px) {
   .row .row {
     margin-left: -18px;
     margin-right: -18px;
@@ -1268,31 +1257,21 @@ a:-webkit-any-link {
 #mytimeline .timeline-block {
   position: relative;
   padding-top: 1.5rem;
+  width: 100% !important;
 }
 
-/* Enhanced Work Experience Styling */
+/* Modern Work Experience Section Redesign */
 .work-experience-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
   padding: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .work-experience-card::before {
@@ -1301,8 +1280,8 @@ a:-webkit-any-link {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #f89420, #ed2330);
+  height: 4px;
+  background: linear-gradient(90deg, #f89420, #ed2330, #f89420);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1313,153 +1292,215 @@ a:-webkit-any-link {
 
 .work-experience-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   border-color: rgba(248, 148, 32, 0.4);
 }
 
-.work-experience-icon {
-  background: linear-gradient(135deg, #f89420, #ed2330) !important;
-  box-shadow: 0 6px 20px rgba(248, 148, 32, 0.3);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.work-experience-card:hover .work-experience-icon {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 10px 30px rgba(248, 148, 32, 0.5);
-}
-
 .work-experience-header {
-  margin-bottom: 2rem;
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.work-experience-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(248, 148, 32, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.work-experience-card:hover .work-experience-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(248, 148, 32, 0.5);
+}
+
+.work-experience-icon i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.work-experience-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .work-role-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: linear-gradient(135deg, #f89420, #ed2330);
   color: white;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 30px;
-  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.75rem;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(248, 148, 32, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: fit-content;
+  margin-bottom: 0.5rem;
 }
 
 .work-period {
-  color: #f0f8ff !important;
-  font-size: 1.2rem;
+  color: #f0f8ff;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin: 0.8rem 0;
-  background: rgba(248, 148, 32, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  background: rgba(248, 148, 32, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
   display: inline-block;
-  border: 1px solid rgba(248, 148, 32, 0.2);
+  border: 1px solid rgba(248, 148, 32, 0.3);
+  width: fit-content;
 }
 
 .work-company-info {
-  margin-bottom: 2rem;
-  text-align: left;
+  margin-top: 0.5rem;
 }
 
 .work-company {
-  color: #f89420 !important;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
+  color: #f89420;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .work-position {
-  color: #f0f8ff !important;
-  font-size: 1.3rem;
+  color: #f0f8ff;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   font-style: italic;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .work-description {
-  text-align: left;
+  margin-top: 1rem;
 }
 
 .work-achievements {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .work-achievements li {
   color: #d0d0d0;
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 1rem;
-  padding-left: 2rem;
-  position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 1rem 1rem 1rem 2.5rem;
-  border-radius: 8px;
-  border-left: 3px solid rgba(248, 148, 32, 0.3);
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 4px solid rgba(248, 148, 32, 0.4);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .work-achievements li:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   border-left-color: #f89420;
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(248, 148, 32, 0.2);
-}
-
-.work-achievements li:focus-within {
-  background: rgba(255, 255, 255, 0.05);
-  border-left-color: #f89420;
-  outline: 2px solid rgba(248, 148, 32, 0.5);
-  outline-offset: 2px;
+  transform: translateX(8px);
+  box-shadow: 0 6px 20px rgba(248, 148, 32, 0.2);
 }
 
 .work-achievements li::before {
   content: "▸";
   color: #f89420;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   position: absolute;
   left: 0.8rem;
   top: 1rem;
 }
 
-/* Responsive adjustments for work experience */
+/* Tablet Responsive Design */
 @media only screen and (max-width: 768px) {
   .work-experience-card {
-    padding: 1.8rem;
-    margin-bottom: 2rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .work-experience-header {
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .work-experience-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+  }
+  
+  .work-experience-icon i {
+    font-size: 1.6rem;
+  }
+  
+  .work-company {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .work-position {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .work-period {
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .work-achievements li {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+  
+  .work-achievements li::before {
+    left: 0.6rem;
+    top: 0.8rem;
+    font-size: 1.2rem;
+  }
+  
+  .work-role-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* Mobile Responsive Design */
+@media only screen and (max-width: 480px) {
+  .work-experience-card {
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
     border-radius: 12px;
   }
   
   .work-experience-header {
-    flex-direction: row;
-    align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 1.5rem;
-    position: relative;
+    margin-bottom: 1.2rem;
   }
   
-  .work-experience-card .work-experience-icon {
-    width: 50px !important;
-    height: 50px !important;
-    flex-shrink: 0 !important;
-    position: absolute !important;
-    top: 1rem !important;
-    left: 1.5rem !important;
-    margin-left: 0 !important;
-    line-height: normal !important;
+  .work-experience-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
   }
   
   .work-experience-icon i {
@@ -1468,59 +1509,53 @@ a:-webkit-any-link {
   
   .work-company {
     font-size: 1.3rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
   }
   
   .work-position {
     font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
   
   .work-period {
-    font-size: 1rem;
-    padding: 0.4rem 0.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
   }
   
   .work-achievements li {
     font-size: 0.9rem;
-    padding: 0.8rem 0.8rem 0.8rem 2rem;
-    margin-bottom: 0.8rem;
+    padding: 0.7rem 1rem;
+    line-height: 1.6;
   }
   
   .work-achievements li::before {
     left: 0.5rem;
-    top: 0.8rem;
+    top: 0.7rem;
     font-size: 1.1rem;
   }
   
   .work-role-badge {
-    font-size: 0.75rem;
-    padding: 0.3rem 1rem 0.2rem 1rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.8rem;
   }
 }
 
-@media only screen and (max-width: 480px) {
+/* Extra Small Mobile Design */
+@media only screen and (max-width: 360px) {
   .work-experience-card {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    min-height: 44px; /* Ensure minimum touch target size */
+    padding: 1.2rem;
+    margin-bottom: 1rem;
   }
   
   .work-experience-header {
     gap: 0.8rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
   
-  .work-experience-card .work-experience-icon {
-    width: 45px !important;
-    height: 45px !important;
-    min-width: 45px !important; /* Prevent shrinking */
-    position: absolute !important;
-    top: 0.8rem !important;
-    left: 1.2rem !important;
-    margin-left: 0 !important;
-    line-height: normal !important;
+  .work-experience-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
   }
   
   .work-experience-icon i {
@@ -1534,34 +1569,22 @@ a:-webkit-any-link {
   
   .work-position {
     font-size: 1rem;
+    margin-bottom: 0.8rem;
   }
   
   .work-period {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.7rem;
-    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
   }
   
   .work-achievements li {
     font-size: 0.85rem;
-    padding: 0.7rem 0.7rem 0.7rem 1.8rem;
-    margin-bottom: 0.7rem;
-    min-height: 44px; /* Ensure minimum touch target size */
-  }
-  
-  .work-achievements li::before {
-    left: 0.4rem;
-    top: 0.7rem;
-    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
   }
   
   .work-role-badge {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.8rem 0.1rem 0.8rem !important;
-    min-height: 44px; /* Ensure minimum touch target size */
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.2rem;
+    font-size: 0.6rem;
+    padding: 0.25rem 0.7rem;
   }
 }
 
@@ -1721,7 +1744,7 @@ a:-webkit-any-link {
   }
 }
 
-/*for mobiles*/
+/* for mobiles */
 
 @media (max-width: 900px) {
   #introduction,
@@ -2150,6 +2173,7 @@ a:-webkit-any-link {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     padding: 2rem 1rem;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -4863,3 +4887,689 @@ a:-webkit-any-link {
   font-weight: bold;
   margin-right: 0.5rem;
 }
+
+/* ===================================================
+   NEW WORK EXPERIENCE SECTION REDESIGN
+   =================================================== */
+
+/* New Work Experience Container */
+.work-exp-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #151515 50%, #0a0a0a 100%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-exp-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(248, 148, 32, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(237, 35, 48, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* New Work Experience Cards */
+.work-exp-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(25px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  width: 100% !important;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.work-exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #f89420, #ed2330, #f89420);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 24px 24px 0 0;
+}
+
+.work-exp-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(248, 148, 32, 0.02) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.work-exp-card:hover::before {
+  opacity: 1;
+}
+
+.work-exp-card:hover::after {
+  opacity: 1;
+}
+
+.work-exp-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(248, 148, 32, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(248, 148, 32, 0.3);
+}
+
+/* Work Experience Header */
+.work-exp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  width: 100% !important;
+  min-width: 0;
+  flex: 1;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.work-exp-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 12px 35px rgba(248, 148, 32, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-exp-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-exp-card:hover .work-exp-icon {
+  transform: scale(1.15) rotate(8deg);
+  box-shadow: 
+    0 18px 45px rgba(248, 148, 32, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.work-exp-card:hover .work-exp-icon::before {
+  opacity: 1;
+}
+
+.work-exp-icon i {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: relative;
+}
+
+/* Work Experience Content */
+.work-exp-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100% !important;
+  min-width: 0;
+  overflow: hidden;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.work-exp-role-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 
+    0 6px 20px rgba(248, 148, 32, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: fit-content;
+  margin-bottom: 0.8rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-exp-role-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.work-exp-card:hover .work-exp-role-badge::before {
+  left: 100%;
+}
+
+.work-exp-period {
+  color: #f0f8ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(248, 148, 32, 0.2), rgba(237, 35, 48, 0.2));
+  padding: 0.6rem 1.2rem;
+  border-radius: 15px;
+  display: inline-block;
+  border: 1px solid rgba(248, 148, 32, 0.4);
+  width: fit-content;
+  box-shadow: 0 4px 15px rgba(248, 148, 32, 0.2);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.work-exp-period::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.work-exp-card:hover .work-exp-period::before {
+  transform: translateX(100%);
+}
+
+.work-exp-company-info {
+  margin-top: 0.8rem;
+  width: 100% !important;
+}
+
+.work-exp-company {
+  color: #f89420;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(248, 148, 32, 0.3);
+  background: linear-gradient(135deg, #f89420, #ed2330);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 100% !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.work-exp-position {
+  color: #f0f8ff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-style: italic;
+  opacity: 0.95;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  width: 100% !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.work-exp-description {
+  margin-top: 1.5rem;
+  width: 100% !important;
+}
+
+.work-exp-achievements {
+  list-style: none;
+  padding: 1.5rem 2rem;
+  margin: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border-radius: 20px;
+  border-left: 6px solid rgba(248, 148, 32, 0.6);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  width: 90% !important;
+  box-sizing: border-box;
+}
+
+.work-exp-achievements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(248, 148, 32, 0.03), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.work-exp-card:hover .work-exp-achievements::before {
+  opacity: 1;
+}
+
+.work-exp-achievements li {
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 0.8rem 0;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2rem;
+  transition: all 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.work-exp-achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.work-exp-achievements li::before {
+  content: "▸";
+  color: #f89420;
+  font-weight: bold;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 0;
+  top: 0.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.work-exp-achievements li:hover {
+  color: #f0f8ff;
+  transform: translateX(8px);
+}
+
+/* Responsive Design for New Work Experience */
+@media only screen and (max-width: 1200px) {
+  .work-exp-card {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .work-exp-header {
+    gap: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .work-exp-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+  }
+  
+  .work-exp-icon i {
+    font-size: 1.8rem;
+  }
+  
+  .work-exp-company {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .work-exp-position {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .work-exp-container {
+    padding: 3rem 0;
+  }
+  
+  .work-exp-card {
+    padding: 2rem;
+    margin-bottom: 1.8rem;
+    border-radius: 20px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .work-exp-header {
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+    width: 100% !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .work-exp-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+  }
+  
+  .work-exp-icon i {
+    font-size: 1.6rem;
+  }
+  
+  .work-exp-company {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .work-exp-position {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .work-exp-role-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+  
+  .work-exp-period {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .work-exp-achievements {
+    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .work-exp-achievements li {
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .work-exp-achievements li::before {
+    font-size: 1.2rem;
+    left: 0;
+    top: 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .work-exp-container {
+    padding: 2rem 0;
+  }
+  
+  .work-exp-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .work-exp-header {
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    width: 80% !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .work-exp-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+  }
+  
+  .work-exp-icon i {
+    font-size: 1.4rem;
+  }
+  
+  .work-exp-company {
+    font-size: 1.6rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .work-exp-position {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .work-exp-role-badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .work-exp-period {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .work-exp-achievements {
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+  }
+  
+  .work-exp-achievements li {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    padding-left: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .work-exp-achievements li::before {
+    font-size: 1.1rem;
+    left: 0;
+    top: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .work-exp-card {
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-radius: 14px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .work-exp-header {
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    width: 100% !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .work-exp-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+  
+  .work-exp-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .work-exp-company {
+    font-size: 1.4rem;
+    letter-spacing: 0.6px;
+  }
+  
+  .work-exp-position {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .work-exp-role-badge {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.6px;
+  }
+  
+  .work-exp-period {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+  }
+  
+  .work-exp-achievements {
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .work-exp-achievements li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    padding-left: 1rem;
+    line-height: 1.5;
+  }
+  
+  .work-exp-achievements li::before {
+    font-size: 1rem;
+    left: 0;
+    top: 0.4rem;
+  }
+}
+
+/* Animation for New Work Experience Cards */
+@keyframes workExpSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.work-exp-card {
+  animation: workExpSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+}
+
+.work-exp-card:nth-child(1) { animation-delay: 0.1s; }
+.work-exp-card:nth-child(2) { animation-delay: 0.2s; }
+.work-exp-card:nth-child(3) { animation-delay: 0.3s; }
+.work-exp-card:nth-child(4) { animation-delay: 0.4s; }
+.work-exp-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Focus and Accessibility */
+.work-exp-card:focus-visible {
+  outline: 2px solid #f89420;
+  outline-offset: 4px;
+  transform: translateY(-8px);
+}
+
+.work-exp-card:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .work-exp-card,
+  .work-exp-icon,
+  .work-exp-achievements li {
+    transition: none;
+    animation: none;
+  }
+  
+  .work-exp-card:hover {
+    transform: none;
+  }
+  
+  .work-exp-card:hover .work-exp-icon {
+    transform: none;
+  }
+  
+  .work-exp-achievements li:hover {
+    transform: none;
+  }
+  
+  .work-exp-achievements::before {
+    transition: none;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .work-exp-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .work-exp-card:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+    border-color: rgba(248, 148, 32, 0.4);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .work-exp-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+  }
+  
+  .work-exp-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .work-exp-icon {
+    background: #f89420;
+    box-shadow: none;
+  }
+  
+  .work-exp-company {
+    color: #f89420;
+    -webkit-text-fill-color: #f89420;
+  }
+}
+
